@@ -1,0 +1,1839 @@
+@import url('https://fonts.googleapis.com/css2?family=Atomic+Age&family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/**/
+@font-face {
+    font-family: 'Moon Dance';
+    src: url('../font/MoonDance-Regular.ttf') format('truetype');
+}
+
+#headerCover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #41D6FE, #1DA1F2, #332DFD);
+    background-size: 400% 400%;
+    animation: gradient 15s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
+#headerCover #quote {
+    color: #fff;
+    margin-bottom: -24px;
+    font-family: "Moon Dance";
+    font-size: 3rem;
+}
+
+#headerCover #quote .char {
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    opacity: 0;
+}
+
+#headerCover .loadingBar {
+    position: relative;
+    margin-top: 20px;
+    width: 100vw;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.368);
+    overflow: hidden;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#headerCover .loadingBar .loadingValue {
+    position: absolute;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1dccfa+1,075aea+100 */
+    background: linear-gradient(to right, #e2f9ff 1%, #9bbefa 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 400% 400%;
+    animation: loadingBar 15s ease;
+    width: 0;
+    height: 10px;
+}
+
+/**/
+body ul,
+body ol,
+body li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: #ffffff;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    min-width: 270px;
+    font-weight: 400;
+    color: #505561;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 16px 0;
+    z-index: 3;
+    transition: all 1s;
+    font-family: "Inter", sans-serif;
+}
+
+header .WP {
+    width: 100%;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header.scroll {
+    background-color: #fff;
+}
+
+header.scroll .left a {
+    background: url('../img/logo.png') no-repeat center;
+    background-size: contain;
+}
+
+header .left a.login {
+    display: none;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header.scroll .left a.login {
+    background: none;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #3268AA;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header.scroll .right a {
+    color: #444;
+    text-shadow: none;
+}
+
+header .left {
+    width: auto;
+}
+
+header .left a {
+    display: block;
+    background: url('../img/logoW.png') no-repeat center;
+    background-size: contain;
+    width: 160px;
+}
+
+header .left a.black {
+    background: url('../img/logo.png') no-repeat left center;
+    background-size: contain;
+}
+
+header .left a h1 {
+    text-indent: -9999px;
+    opacity: 0;
+}
+
+header .right {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .menu {
+    width: 320px;
+    position: fixed;
+    top: 0;
+    left: -320px;
+    z-index: 3;
+    padding: 10px 0;
+    background-color: #fff;
+    height: 100vh;
+}
+
+header .menu .close {
+    height: 32px;
+    margin-left: 88%;
+}
+
+header .menu .close.animation {
+    animation-name: Xrotate;
+    animation-duration: 1.5s;
+}
+
+header .menu .close.back {
+    animation-name: rotateBack;
+    animation-duration: 1.5s;
+}
+
+@keyframes Xrotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes rotateBack {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+header .menu .black {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    margin: 30px auto 20px;
+}
+
+header .menu a,
+header .menu span {
+    display: block;
+    margin: 0;
+    color: #254DDA;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 70px;
+    padding: 8px 25px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+header .menu span {
+    border-radius: 50%;
+    background-color: #254DDA;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    padding: 10px;
+    box-sizing: content-box;
+    line-height: 22px;
+    text-align: center;
+    margin-left: 24px;
+    margin-top: 15px;
+}
+
+header .menu a.top {
+    border-top: 1px solid #eee;
+}
+
+header .menu .black a:nth-child(2):after {
+    content: '';
+}
+
+header .menu .black a {
+    color: #fff;
+    background-color: #3268AA;
+    width: 272px;
+    height: 40px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+header .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vh;
+    background-color: #0a264e75;
+    display: none;
+    z-index: 1;
+    margin-left: 10%;
+}
+
+header nav {
+    width: 25px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    left: 25px;
+    top: 14px;
+}
+
+header nav span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    -webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+
+header.scroll nav span {
+    background: #332DFD;
+}
+
+header nav span:nth-of-type(1) {
+    top: 8px;
+}
+
+header nav span:nth-of-type(2) {
+    top: 20px;
+    width: 16px;
+}
+
+.menuOpen header nav span:nth-of-type(1) {
+    top: 12px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    background: #3268AA;
+    opacity: 0;
+}
+
+.menuOpen header nav span:nth-of-type(2) {
+    width: 0;
+    right: 0
+}
+
+.menuOpen header nav span:nth-of-type(3) {
+    top: 12px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background: #3268AA;
+    opacity: 0;
+}
+
+header .right a {
+    font-size: 1.125rem;
+    margin-right: 20px;
+    font-weight: 400;
+    text-align: right;
+    color: #fff;
+    position: relative;
+    transition: all .5S;
+}
+
+/*language*/
+header .right .language {
+    border: 1px solid #254DDA;
+    color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    padding: 5px;
+    background-color: #254DDA;
+    position: relative;
+    cursor: pointer;
+}
+
+/* header .right .languageWP:hover::before,
+header .right .languageWP:active::before {
+    content: '';
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff69;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    opacity: 0;
+    animation: shiny .4s ease-out;
+} */
+
+
+/* @-webkit-keyframes shiny {
+    0% {
+        left: 7px;
+        top: 7px;
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        left: -3px;
+        top: -3px;
+        width: 40px;
+        height: 40px;
+        opacity: 0.3;
+    }
+} */
+
+header .right a.black {
+    color: rgb(124, 124, 124);
+}
+
+header.scroll .top a.login {
+    background-color: #0287ec;
+    color: #fff;
+}
+
+/*canvas*/
+canvas {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+/*goTop*/
+.goTop {
+    width: 50px;
+    cursor: pointer;
+    transition: all .8s;
+    position: fixed;
+    right: 5%;
+    z-index: 4;
+    bottom: 10%;
+    opacity: 0.9;
+    display: none;
+}
+
+#main #carousel3 {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/*main*/
+#main {
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+
+#main .bannerText {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#main .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background: url('../img/bannerV3.png') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.zh #main .bannerText p.en {
+    height: auto;
+}
+
+#main .bannerText p {
+    font-size: 24px;
+    line-height: 2rem;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+#main .bannerText p.en {
+    width: 505px;
+    margin: 30px 0;
+    font-size: 1.15rem;
+    color: #fff;
+    text-align: left;
+}
+
+#main .bannerText p.title.white {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    width: 450px;
+    line-height: normal;
+    margin: 0;
+}
+
+#main .bannerText p.title span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 0 19px;
+    display: inline-block;
+    position: relative;
+    top: -14px;
+}
+
+#main .bannerText p.title span::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#main .bannerText a {
+    height: 52px;
+    border-radius: 26px;
+    background-color: #25c1ed;
+    padding: 0 50px;
+    line-height: 52px;
+    color: #fff;
+    font-size: 15px;
+    margin: 58px 0 0 0;
+    position: relative;
+    transition: all .8s;
+    display: block;
+    width: 80px;
+    opacity: 0;
+}
+
+.zh #main .bannerText a {
+    width: 66px;
+}
+
+#main .bannerText a:hover {
+    color: #FFFFFF;
+    background-color: #1d2ff2;
+}
+
+#main .slider {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#main .slider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* #main .slider img.four {
+    object-position: 100% 55%;
+} */
+
+#main .slider img.six {
+    width: 146%;
+    height: 126vh;
+    object-position: 110% 100%;
+}
+
+/* #main .slider img.seven {
+    object-position: 43% 100%;
+} */
+
+#main .row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#about {
+    width: 100%;
+    height: auto;
+    padding: 60px 0 0;
+}
+
+#main .row1 {
+    max-width: 1500px;
+    width: 90%;
+}
+
+#main .row2 .wp {
+    max-width: 1500px;
+    width: 90%;
+    margin: 60px auto 80px;
+    position: relative;
+}
+
+#main p {
+    color: #707070;
+    line-height: 1.7rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin: 0 auto 20px;
+    width: 80%;
+    text-align: center;
+}
+
+#main p.white {
+    color: #fff;
+}
+
+#main .flex p {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .flex span.title {
+    font-size: 1.25rem;
+    height: auto;
+    padding-left: 0;
+    font-weight: 300;
+    color: #666;
+}
+
+#main .flex span {
+    font-size: 1rem;
+    width: 100%;
+    height: 128px;
+}
+
+#main .flex p img {
+    width: 80px;
+}
+
+#main p.left {
+    text-align: left;
+    color: #6e6e6e;
+}
+
+#main p.left strong {
+    color: #4260f7;
+    font-weight: 200;
+}
+
+#main p.title.white {
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.2rem;
+    padding-left: 0;
+    width: auto;
+    margin: 0 auto 30px;
+    text-align: left;
+}
+
+.zh #main p.title.white {
+    width: auto;
+}
+
+#main p.title.bold {
+    font-weight: 500;
+    color: #6c6c6c;
+}
+
+#main p.title.white::after {
+    display: none;
+}
+
+#main .title {
+    font-weight: 500;
+    color: #6c6c6c;
+    padding-left: 1.5rem;
+    font-size: 2.5rem;
+    line-height: 38px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#main span.color_red {
+    color: #3555FC;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .flex {
+    width: 80%;
+    margin: 30px auto 50px;
+    flex-wrap: wrap;
+}
+
+#main .flex.mobile {
+    display: none;
+}
+
+#main .flex.mobile .top,
+#main .flex.mobile .down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .flex .item,
+#product .flex .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+#main .flex {
+    margin-top: 84px;
+    position: relative;
+}
+
+#main .row2,
+#main .row3 {
+    background: #F9F9F9;
+    padding: 85px 20px;
+    box-sizing: border-box;
+}
+
+#main .row2>.flex {
+    width: 100%;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.imgWp {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.imgWp img {
+    display: block;
+    margin: 0 auto;
+    height: 80vh;
+}
+
+#main .row2 .flex img {
+    height: 48px;
+}
+
+#main .row2 .flex img.device {
+    width: 200px;
+    height: auto;
+}
+
+#main .row2 .flex .left,
+#main .row2 .flex .middle,
+#main .row2 .flex .right {
+    width: 33%;
+    margin: 0 auto 120px;
+}
+
+#main .row2 .flex .left .flex,
+#main .row2 .flex .right .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#main .row2 .flex .left .text,
+#main .row2 .flex .right .text {
+    width: 100%;
+    text-align: center;
+}
+
+.zh #main .row2 .flex .left .text p,
+.zh #main .row2 .flex .right .text p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #0287ec;
+}
+
+#main .row2 .flex .left .text p,
+#main .row2 .flex .right .text p {
+    font-size: 1.25rem;
+    margin-left: 0;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    color: #0287ec;
+}
+
+.zh #main .row2 .flex>div.text span {
+    font-weight: 300;
+}
+
+#main .row2 .flex>div.text span {
+    color: #444;
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+#main .row3 {
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#service {
+    position: relative;
+    background: linear-gradient(to bottom, #acbaee 0%, #5b76d7 100%);
+    width: 100%;
+    height: 100vh;
+}
+
+#service img {
+    height: 60vh;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20vh;
+}
+
+#service p,
+#service .title {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+#service p {
+    bottom: 6%;
+    left: 0
+}
+
+#service .title {
+    top: 7%;
+    left: 0;
+}
+
+#carousel2 .owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    top: 42%;
+    left: 0;
+}
+
+#carousel2 .owl-nav .owl-prev {
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+
+#carousel2 .owl-nav .owl-next {
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+#carousel2 .owl-nav .owl-prev span,
+#carousel2 .owl-nav .owl-next span {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0;
+}
+
+#carousel2 .owl-nav .owl-prev span {
+    background: url('../img/slider/leftArrow.png') no-repeat;
+    background-size: contain;
+}
+
+#carousel2 .owl-nav .owl-next span {
+    background: url('../img/slider/rightArrow.png') no-repeat;
+    background-size: contain;
+}
+
+#case {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.caseWp {
+    background-color: #C6C6C6;
+    min-height: 500px;
+    position: relative;
+}
+
+#case .logoWp .flex img.Width50 {
+    display: block;
+}
+
+#case .logoWp .flex img.Width50,
+#case .Width50 {
+    width: 50%;
+    height: 400px;
+}
+
+#case .logoWp .flex img {
+    width: auto;
+    height: 92px;
+    display: block;
+    margin: 0 auto;
+}
+
+#case .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    max-width: 1320px;
+    width: 100%;
+}
+
+#case .flex li:last-child {
+    display: none;
+}
+
+#case .logoWp .flex li {
+    margin: 0 12px;
+}
+
+.flex-control-nav {
+    display: none;
+}
+
+#contact img {
+    width: 500px;
+    height: 500px;
+}
+
+#contact {
+    position: relative;
+    background-color: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 50px 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#contact::after {
+    content: '';
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#41d5fd+0,1da1f2+50,332dfd+100 */
+    background: linear-gradient(to right, #41d5fd 0%, #1da1f2 50%, #332dfd 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+}
+
+#contact .right,
+#contact .left {
+    width: 44%;
+}
+
+#contact .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .left {
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+#contact .title {
+    margin: 0 0 30px;
+}
+
+#map {
+    width: 500px;
+    height: 400px;
+}
+
+#contact img {
+    width: 22px;
+    height: 22px;
+}
+
+#contact .textFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 0;
+}
+
+#contact p {
+    color: #222;
+
+}
+
+#contact p.small {
+    font-size: 1rem;
+    margin-bottom: 70px;
+}
+
+#contact .border {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+#contact .border span {
+    font-size: 1.15rem;
+}
+
+#contact .border .thin {
+    font-weight: 300;
+    color: #666;
+    font-size: 1rem;
+}
+
+#contact .border span:nth-child(1) {
+    margin-right: 10px;
+    display: inline-block;
+    width: 88px;
+    font-weight: 200;
+}
+
+#contact .border.nomargin {
+    margin-bottom: 0;
+}
+
+@media(min-width:2000px) {
+    .goTop {
+        right: 12%;
+    }
+}
+
+@media(max-width:2600px) {
+    header .right a {
+        text-shadow: -.5px 0 #1d2ff2, 0 .5px #1d2ff2, .5px 0 #1d2ff2, 0 -.5px #1d2ff2;
+    }
+}
+
+@media(max-width:1500px) {
+    .goTop {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media(max-width:1400px) {
+    #main .flex {
+        width: 90%;
+    }
+}
+
+@media (max-width:1290px) {
+    #case .flex li:last-child {
+        opacity: 0;
+        display: block;
+    }
+}
+
+@media(max-width:1280px) {
+    #case .logoWp .flex li {
+        width: 24%;
+    }
+}
+
+@media(max-width:1200px) {
+    header .WP {
+        justify-content: space-around;
+    }
+
+    #main .slider img.two {
+        object-position: top right;
+    }
+}
+
+@media (max-width:1080px) {
+
+    header {
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+
+    #main .flex {
+        width: 100%;
+    }
+
+    #case .logoWp .flex li {
+        width: 30%;
+    }
+
+    #contact .right,
+    #contact .left {
+        width: 50%;
+    }
+
+    #contact .right {
+        padding-right: 20px;
+    }
+
+    #map {
+        width: 400px;
+    }
+
+    #contact p.small {
+        width: 100%;
+    }
+}
+
+@media (max-width:1000px) {
+    #main .slider img.two {
+        object-position: 90% 0;
+    }
+
+    #main .flex {
+        width: 90%;
+    }
+
+    #main .flex p {
+        width: 50%;
+    }
+
+    #main .flex.one {
+        width: 100%;
+    }
+
+    #main .row2 .flex .left,
+    #main .row2 .flex .right {
+        width: 25%;
+    }
+
+    #main .row2 .flex .middle {
+        width: 50%;
+    }
+
+    #case .logoWp .flex img {
+        height: 80px;
+    }
+
+    #main .flex p img {
+        width: 66px;
+    }
+}
+
+@media(max-width:900px) {
+    #main .slider img.four {
+        object-position: 8% 55%;
+    }
+
+    /* #main .slider img.five {
+        object-position: 65%;
+    } */
+
+    /* #main .slider img.eight {
+        object-position: 47%;
+    } */
+
+    /* #main .slider img.nine {
+        object-position: 90%;
+    } */
+
+    #main .banner {
+        min-height: 800px;
+    }
+
+    #main .banner .left {
+        width: 55%;
+    }
+
+    header .left {
+        width: auto;
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main p {
+        width: 96%;
+    }
+
+    #product .flex .item {
+        width: 30%;
+    }
+}
+
+@media(max-width:850px) {
+
+    #main .bannerText {
+        left: 5%;
+    }
+
+    #main p.title {
+        font-size: 2.5rem;
+
+    }
+
+    #main p.description {
+        font-size: 1rem;
+    }
+
+    #case .logoWp .flex li {
+        width: 27%;
+    }
+
+    #contact p.small {
+        font-size: .9rem;
+    }
+}
+
+@media(max-width:800px) {
+    #main .bannerText p.title.white {
+        font-size: 2.6rem;
+        line-height: 3.5rem;
+    }
+
+    #headerCover #quote .char {
+        font-size: 2rem;
+    }
+
+    #main .slider img.six {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    #main .slider img {
+        object-position: 59%;
+    }
+
+    #main .slider .item:nth-child(even) img {
+        object-position: top 10px;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    header .WP {
+        padding-top: 0;
+    }
+
+    header nav {
+        display: block;
+    }
+
+    header .right {
+        display: none;
+    }
+
+    header .menu {
+        box-sizing: border-box;
+        overflow-y: scroll;
+    }
+
+    header .WP {
+        align-items: center;
+    }
+
+    header .left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transition: all 2s;
+    }
+
+    header.scroll .left {
+        background-color: #fff;
+    }
+
+    header .left a {
+        width: 250px;
+        margin: 3px auto;
+        height: 50px;
+    }
+
+    header .left a.login {
+        display: block;
+        width: auto;
+        background: none;
+        color: #fff;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    #main .row2 .flex img {
+        height: 40px;
+    }
+
+    #main .bannerText p.en {
+        width: 536px;
+        font-size: 1.05rem;
+    }
+
+    #case .logoWp .flex img {
+        height: 64px;
+    }
+}
+
+@media(max-width:750px) {
+    #contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact .right,
+    #contact .left {
+        width: 90%;
+    }
+
+    #contact .right {
+        padding-right: 0;
+    }
+}
+
+@media(max-width:700px) {
+    #main .slider {
+        display: none;
+    }
+
+    #main .banner {
+        background: url('../img/bannerV2.png') no-repeat center;
+        background-size: cover;
+        position: relative;
+    }
+
+    #main .bannerText p.en {
+        width: 52vw;
+        object-position: 41%;
+    }
+
+    #main .bannerText a {
+        margin-left: 20%;
+    }
+
+    #main #carousel3 {
+        display: block;
+        width: 40vw;
+    }
+
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 3vw;
+        right: -29vw;
+        width: 87vw;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    #main .slider img {
+        object-position: 41%;
+    }
+
+    #about,
+    #banner,
+    #product,
+    #service,
+    #case {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    #main .flex {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    #main .row2 .wp {
+        width: 100%;
+    }
+
+    #main .flex p {
+        width: 75%;
+    }
+
+    #main .flex .item {
+        width: 40%;
+    }
+
+    #main .row2 .flex i {
+        margin-bottom: 10px;
+    }
+
+    #main .moreContent .flex .item p.big {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    #product .flex .item {
+        width: 40%;
+    }
+
+    #case {
+        padding: 50px 0;
+    }
+
+    #case .flex {
+        width: 80%;
+    }
+
+    #case .logoWp .flex li {
+        width: 40%;
+    }
+
+    #contact .border span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:650px) {
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 5vw;
+        right: -30vw;
+    }
+
+    #main .slider img {
+        object-position: 61%;
+    }
+
+}
+
+@media (max-width:630px) {
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        right: -31vw;
+    }
+
+}
+
+@media(max-width:600px) {
+    header .left a {
+        width: 200px;
+    }
+
+    .imgWp {
+        top: 184px;
+    }
+
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        right: -33vw;
+        top: 6vw;
+    }
+
+    #main .flex.mobile {
+        display: block;
+    }
+
+    #main .row2 .flex {
+        width: 90%;
+    }
+
+    #main .row2 .flex.one {
+        width: 100%;
+    }
+
+    #main .row2 .flex .left .text p,
+    #main .row2 .flex .right .text p {
+        font-size: 1rem;
+    }
+
+    #contact .left {
+        padding: 50px 30px;
+    }
+
+}
+
+@media(max-width:555px) {
+
+    #case .flex {
+        width: 95%;
+    }
+
+    #case .flex li:last-child {
+        display: none;
+    }
+
+    #case .logoWp .flex li {
+        width: 80%;
+        margin: 0 2px;
+    }
+
+    #case .logoWp .flex img {
+        height: 96px;
+    }
+
+    #main .flex p img {
+        width: 48px;
+    }
+}
+
+@media(max-width:550px) {
+
+    #main .banner::before,
+    #main #carousel3 {
+        display: none;
+    }
+
+    #main .bannerText p.en {
+        width: 450px;
+        font-size: .95rem;
+        margin-bottom: 44px;
+    }
+
+    #main p.description,
+    #main .flex span {
+        font-size: .95rem;
+    }
+
+    #main .bannerText p.title span {
+        top: 0;
+        margin: 0 8px;
+    }
+
+    #main .bannerText {
+        left: 14%;
+    }
+
+    #main .bannerText p {
+        font-size: .7rem;
+    }
+
+    #main .banner a {
+        margin-top: 16px;
+        height: 36px;
+        line-height: 36px;
+    }
+
+    #main .bannerWp {
+        background: url(../img/banner.webp) no-repeat 32% 22%;
+        background-size: cover;
+    }
+
+    #main .title {
+        padding-left: 0;
+    }
+
+    #main .title:after {
+        display: none;
+    }
+
+    #main p {
+        font-size: .9rem;
+    }
+
+    #main .row2 {
+        padding: 35px 20px;
+    }
+
+    #main .flex {
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    #main .row2 .flex>div {
+        width: 100%;
+        align-items: flex-start;
+        margin: 0 auto 70px;
+    }
+
+    #main .row2 .flex>div.text {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #main .row2 .flex.one {
+        flex-direction: row;
+        width: 70%;
+        margin-top: 44px;
+    }
+
+    .imgWp,
+    #main .row2 .flex .middle {
+        display: none;
+    }
+
+    #main .row2 .flex .left,
+    #main .row2 .flex .right {
+        width: 50%;
+    }
+
+    #main .row2 .flex .left .flex,
+    #main .row2 .flex .right .flex {
+        margin: 0 auto;
+    }
+
+    #main .row2 .flex .left .text,
+    #main .row2 .flex .right .text,
+    #main .row2 .flex .left,
+    #main .row2 .flex .middle,
+    #main .row2 .flex .right {
+        margin-bottom: 20px;
+    }
+
+    #main .flex span.title {
+        font-size: 1.15rem;
+    }
+
+    #contact .left {
+        padding: 30px 30px 50px;
+    }
+}
+
+@media(max-width:500px) {
+    #headerCover #quote .char {
+        font-size: 1.8rem;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    #main .bannerText p.en {
+        width: 414px;
+    }
+
+    #main .flex p {
+        width: 80%;
+    }
+
+    #service {
+        height: 80vh;
+        padding-bottom: 20vh;
+    }
+
+    #service img {
+        width: 95%;
+        height: auto;
+        padding-top: 22vh;
+    }
+}
+
+@media(max-width:480px) {
+
+    #main p.title.white,
+    #main #about p.title {
+        font-size: 2rem;
+    }
+
+    #service {
+        padding-bottom: 15vh;
+    }
+}
+
+@media(max-width:450px) {
+
+    header nav {
+        left: 17px;
+    }
+
+    #main .banner img {
+        height: 67px;
+    }
+
+    #main .bannerText p.en {
+        width: 350px;
+    }
+
+    #main .flex .item p,
+    #product .flex .item p {
+        font-size: 1.1rem;
+    }
+
+    #main .flex p {
+        width: 90%;
+    }
+
+
+    #service {
+        height: 60vh;
+        padding-bottom: 12vh;
+    }
+
+    #service img {
+        width: 90%;
+        padding-top: 11vh;
+    }
+
+    #service p {
+        bottom: 4%;
+    }
+}
+
+@media (max-width:414px) {
+    #main .row2 .flex.one {
+        width: 80%;
+    }
+
+    header.scroll .left a.login,
+    header .left a.login {
+        top: 19px;
+        right: 10px;
+    }
+
+    #main .flex .item {
+        width: 50%;
+    }
+
+    #main .title {
+        font-size: 1.7rem;
+    }
+
+    #main .banner img {
+        height: 60px;
+    }
+
+    #main .row1 {
+        width: 100%;
+    }
+
+    #product span {
+        width: 90%;
+    }
+
+    .zh #main p.title.white {
+        font-size: 2rem;
+    }
+
+    #main .bannerText p.en,
+    #main p.description,
+    #main .flex span {
+        font-size: .85rem;
+    }
+
+    #contact .left {
+        padding: 30px 20px 50px;
+    }
+
+    #service p {
+        left: 7px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    #service img {
+        padding-top: 14vh;
+    }
+}
+
+@media(max-width:400px) {
+
+    #main .flex,
+    #product .flex {
+        width: 100%;
+    }
+
+    #main .flex p {
+        width: 95%;
+    }
+}
+
+@media(max-width:375px) {
+    #main .bannerText p.en {
+        width: 320px;
+    }
+}
+
+@media(max-width:350px) {
+    #main .flex {
+        width: 90%;
+    }
+
+}

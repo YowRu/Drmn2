@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" id="metaDescription"
+        content="The Retail Media Network (RMN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <link rel="icon" href="img/icon.ico">
+    <link rel="stylesheet" href="js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css" type="text/css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <title>Digital RMN</title>
+</head>
+
+<body>
+    <div id="headerCover">
+        <div id="quote" lang="welcome">Welcome</div>
+        <div class="loadingBar">
+            <div class="loadingValue"></div>
+        </div>
+    </div>
+    <header>
+        <div class="WP">
+            <div class="left">
+                <nav>
+                    <span></span>
+                    <span></span>
+                </nav>
+                <a href="index.html" class="logo">
+                    <h1>logo</h1>
+                </a>
+            </div>
+            <div class="right">
+                <a href="#about" lang="aboutPC">About us</a>
+                <a href="#product" lang="productPC">Product</a>
+                <a href="#service" lang="servicePC">Service</a>
+                <a href="#case" lang="casePC">Case</a>
+                <a href="#contact" lang="contactPC">Contact us</a>
+                <span class="language" lang="EN_PC">EN</span>
+            </div>
+            <div class="menu">
+                <img src="img/x-close.png" alt="" class="close">
+                <a href="#about" class="top" lang="aboutM">About us</a>
+                <a href="#product" lang="productM">Product</a>
+                <a href="#service" lang="serviceM">Service</a>
+                <a href="#case" lang="caseM">Case</a>
+                <a href="#contact" lang="contactM">Contact us</a>
+                <span class="language" lang="EN_M">EN</span>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </header>
+    <div id="main">
+        <div class="bannerText">
+            <p class="title white" lang="RMN">LET’S IMPROVE ADVERTISING EFFECTIVENESS</p>
+            <div>
+                <p class="en white" lang="description">We leverage the power of location, creative, and smart audience
+                    data to drive meaningful connections between brands and audiences in the real world with out of home
+                    advertising.</p>
+                <a href="#case" lang="more">learn more</a>
+            </div>
+        </div>
+        <div class="banner" id="banner"></div>
+        <div class="slider owl-carousel owl-theme" id="carousel1">
+            <div class="item"><img src="img/slider/S__1.jpg" /></div>
+            <div class="item"><img src="img/slider/S__2.png" class="two"/></div>
+            <div class="item"><img src="img/slider/S__4.png" class="four"/></div>
+            <div class="item"><img src="img/slider/S__5.png" class="five"/></div>
+            <div class="item"><img src="img/slider/S__7.png" class="seven"/></div>
+            <div class="item"><img src="img/slider/S__8.png" class="eight"/></div>
+            <div class="item"><img src="img/slider/S__9.png" class="nine"/></div>
+        </div>
+        <div class="slider owl-carousel owl-theme" id="carousel3">
+            <div class="item"><img src="img/bannerM/1.png" /></div>
+            <div class="item"><img src="img/bannerM/2.png"/></div>
+            <div class="item"><img src="img/bannerM/3.png"/></div>
+        </div>
+        <div id="about">
+            <div class="row row1">
+                <p class="title bold" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="300" lang="about">
+                    OUR MISSION
+                </p>
+                <p class="description" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="300"
+                    data-aos-delay='1000' lang="aboutDescription">Assisting businesses in delivering precise messages to
+                    consumers through
+                    various media formats to increase conversion rates.</p>
+                <div class="flex">
+                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600'>
+                        <img src="img/mission1.png" alt="">
+                        <span class="title" lang="aboutNum1">First party database</span>
+                        <span lang="aboutNumDescription1">First-hand information collected by companies from
+                            consumers.</span>
+                    </p>
+                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600'>
+                        <img src="img/mission2.png" alt="">
+                        <span class="title" lang="aboutNum2">Closed-loop attribution system</span>
+                        <span lang="aboutNumDescription2">Effectively clarify the relationship between advertising spend
+                            and sales.</span>
+                    </p>
+                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600'>
+                        <img src="img/mission3.png" alt="">
+                        <span class="title" lang="aboutNum3">Context-locked advertising</span>
+                        <span lang="aboutNumDescription3">The advertising content is related to the product and has a
+                            strong shopping
+                            orientation.</span>
+                    </p>
+                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='500'>
+                        <img src="img/mission4.png" alt="">
+                        <span class="title" lang="aboutNum4">Large-scale audience</span>
+                        <span lang="aboutNumDescription4">Ensure a large number of consumers, enough to reach the target
+                            customers.</span>
+                    </p>
+                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='500'>
+                        <img src="img/mission5.png" alt="">
+                        <span class="title" lang="aboutNum5">Marketing funnel</span>
+                        <span lang="aboutNumDescription5">Meet current search needs and effectively guide to final
+                            conversion.</span>
+                    </p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div id="product">
+            <div class="row row2">
+                <div class="wp">
+                    <p class="title" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="500"
+                        lang="product">How We Do</p>
+                    <p class="small" data-aos="fade-up" data-aos-duration="500" lang="productDescription">Utilizing
+                        advanced DOOH advertising tools to provide advertisers with more options
+                        and enhance the effectiveness of advertising campaigns.</p>
+                    <div class="flex one">
+                        <div class="left">
+                            <div class="flex" data-aos="fade-right" data-aos-duration="600">
+                                <img src="img/product1.png" alt="">
+                                <div class="text">
+                                    <p lang="multipleSizes">Multiple sizes</p>
+                                    <span lang="multipleSizesD">15.6/ 22/ 27</span>
+                                </div>
+                            </div>
+                            <div class="flex" data-aos="fade-right" data-aos-duration="600">
+                                <img src="img/product2.png" alt="">
+                                <div class="text">
+                                    <p lang="LED">LED</p>
+                                    <span lang="LEDDescription">Welcome light</span>
+                                </div>
+                            </div>
+                            <div class="flex" data-aos="fade-right" data-aos-duration="600">
+                                <img src="img/product3.png" alt="">
+                                <div class="text">
+                                    <p lang="battery">Battery</p>
+                                    <span lang="batteryDeacription">Lithium-ion</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle"></div>
+                        <div class="right">
+                            <div class="flex" data-aos="fade-left" data-aos-duration="600">
+                                <img src="img/product4.png" alt="">
+                                <div class="text">
+                                    <p lang="wireless">Wireless</p>
+                                    <span lang="wirelessDeacription">non-restricted</span>
+                                </div>
+                            </div>
+                            <div class="flex" data-aos="fade-left" data-aos-duration="600">
+                                <img src="img/product5.png" alt="">
+                                <div class="text">
+                                    <p lang="cloud">Cloud Hosting</p>
+                                    <span lang="cloudDeacription">Data security</span>
+                                </div>
+                            </div>
+                            <div class="flex" data-aos="fade-left" data-aos-duration="600">
+                                <img src="img/product6.png" alt="">
+                                <div class="text">
+                                    <p lang="data">Big Data</p>
+                                    <span lang="dataDeacription">authenticity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgWp" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/device.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="service">
+            <div class="title" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="500" lang="service">What
+                We Do</div>
+            <img src="img/phone.webp" alt="" data-aos="fade-down-left" data-aos-duration="500" id="sImg">
+            <p data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="500" lang="serviceDeacription">Easy
+                operation, accurate advertising
+                placement.</p>
+        </div>
+        <div id="case">
+            <p class="title" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="500" lang="case">Case</p>
+            <div class="logoWp">
+                <ul class="flex">
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/tek.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/kepro.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/rcsa.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/huanding.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/Xinyi.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/gis.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/topLink.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/ikala.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/Youbon.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/TCA.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/bike.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/chihlee.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/tatung.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/yuan.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/kuo.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/transportation.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/chanchao.svg" />
+                    </li>
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                        <img src="img/logo/chanchao.svg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="owl-carousel owl-theme" id="carousel2">
+            <div class="item"><img src="img/case/C7_1.png" /></div>
+            <div class="item"><img src="img/case/C7_2.jpg" /></div>
+            <div class="item"><img src="img/case/C7_3.jpg" /></div>
+            <div class="item"><img src="img/case/C7_4.png" /></div>
+            <div class="item"><img src="img/case/C7_5.jpg" /></div>
+            <div class="item"><img src="img/case/C1_1_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C1_2_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C1_3_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C1_5_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C2_1_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C2_2_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C3_1_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C3_2_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C4_1_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C4_2_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C4_3_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C4_4_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C4_5_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C5_1_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C5_2_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C5_3_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C6_3_11zon.jpg" /></div>
+            <div class="item"><img src="img/case/C6_4_11zon.jpg" /></div>
+        </div>
+        <div id="contact">
+            <div class="left">
+                <div class="title" lang="contact">Contact Us</div>
+                <p class="small" lang="contactDeacription">Feel free to contact us any time, we will get back to you as
+                    soon as we can.</p>
+                <p class="border">
+                    <span lang="telephone">Telephone</span>
+                    <span class="thin">02-25851098</span>
+                </p>
+                <p class="border nomargin">
+                    <span lang="email">Email</span>
+                    <a href="mailto:service@drmn.com.tw" class="thin">service@drmn.com.tw</a>
+                </p>
+            </div>
+            <div class="right">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <img src="img/top_ic.svg" alt="" class="goTop">
+
+    <script>
+        function initMap() {
+            // 確保地圖元素存在
+            if (document.getElementById('map')) {
+                const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
+
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    center: myLatLng,
+                    mapId: 'd1c5bf3532fbaeda',
+                    zoom: 17,
+                });
+                let marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map,
+                    title: '地圖標記'
+                });
+            }
+        }
+
+        $(document).ready(function () {
+
+            let $H = $(window).height();
+            let $W = $(window).width();
+
+            //language
+            let translations = {};
+
+            function loadTranslations(nowLang) {
+                let newLang;
+                nowLang === 'EN' ? newLang = 'zh.json' : newLang = 'en.json';
+                fetch(newLang)
+                    .then(response => response.json())
+                    .then(data => {
+                        translations = data;
+                        updateElements();
+
+                        if (newLang === 'zh.json') {
+                            $('body').addClass('zh');
+                        } else {
+                            $('body').removeClass('zh');
+                        }
+                        let description;
+                        if (nowLang != 'EN') {
+                            description = "The Retail Media Network (RMN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.";
+                        } else {
+                            description = "零售媒體聯播網專門為零售業者提供的媒體平台，通過聯播網絡的方式，將零售業者的廣告、活動、公告等資訊快速且有效地傳遞給目標消費者。";
+                        }
+                        // 更新 meta description
+                        $('#metaDescription').attr('content', description);
+                    })
+                    .catch(error => console.error('Error loading translations:', error));
+            }
+
+            function updateElements() {
+                document.querySelectorAll('[lang]').forEach(element => {
+                    const key = element.getAttribute('lang');
+
+                    if (translations[key]) {
+                        element.textContent = translations[key];
+                    }
+                });
+            }
+            $('.language').click(function () {
+                let nowLang = $(this).text();
+                localStorage.setItem('language', nowLang);
+                loadTranslations(nowLang);
+            });
+
+            // 檢查 localStorage 中是否有存儲的語言喜好
+            let storedLanguage = localStorage.getItem('language');
+            if (storedLanguage) {
+                loadTranslations(storedLanguage);
+            } else {
+                loadTranslations('EN');
+            }
+
+            /*header*/
+            let h = $('header .row1 .menu').height();
+            if ($H - 40 < h) {
+                $('header .row1 .menu').css({ 'overflow-y': 'scroll' });
+            }
+
+            //resize   
+            $(window).resize(function () {
+                let $H = $(window).height();
+                let $W = $(window).width();
+                $('header .menu').animate({
+                    'marginLeft': 0
+                }, 0);
+                $('header .left').css({ 'display': 'block' });
+                $('header .bg').hide();
+                $('body').css('overflow-y', 'auto');
+                $('#main').removeClass('sliderDown').removeClass('menuOpen');
+
+                if (600 > $H) {
+                    $('header .menu a').css({ 'line-height': '55px' });
+                }
+            });
+
+            //header
+            let header = $('header');
+            let scrollThreshold = 80;
+
+            $(document).scroll(function () {
+                if ($(this).scrollTop() > scrollThreshold) {
+                    header.addClass('scroll');
+                } else {
+                    header.removeClass('scroll');
+                }
+            });
+
+            /*menu*/
+            $('header nav').click(function () {
+                if ($W < 450) {
+                    $('header .menu').css({ 'left': '-270px', 'width': '270px' });
+                    $('header .menu').show().animate({
+                        'marginLeft': 270,
+                    }, 500);
+                } else {
+                    $('header .menu').show().animate({
+                        'marginLeft': 320,
+                    }, 500);
+                }
+                $('header .menu .close').removeClass('back').addClass('animation');
+                $('header .bg').show();
+                $('body').css('overflow', 'hidden');
+            });
+            $('header .menu .close').click(function () {
+                $('header .menu .close').removeClass('animation').addClass('back');
+                $('header .menu').animate({
+                    'marginLeft': 0
+                }, 800);
+                $('body').css('overflow-y', 'auto');
+                
+                $('header .bg').hide();
+            });
+
+            $('header .menu a').click(function () {
+                $('header .menu').slideUp();
+                $('header .bg').hide();
+                $("body").removeClass('menuOpen');
+                $('header').removeClass('open');
+                $('body').css('overflow-y', 'auto');
+            });
+
+            //href
+            let url = location.href;
+            let ary = url.split('/');
+
+            $('a[href="#about"]').click(function () {
+                if ($W > 750) {
+                    $('html,body').animate({
+                        scrollTop: $('#banner').offset().top - 111
+                    }, 800);
+                } else {
+                    $('html,body').animate({
+                        scrollTop: $('#banner').offset().top - 80
+                    }, 800);
+                }
+            }
+            );
+
+            $('a[href="#product"]').click(function () {
+                if ($W > 750) {
+                    $('html,body').animate({
+                        scrollTop: $('#product').offset().top - 111
+                    }, 800);
+                } else {
+                    $('html,body').animate({
+                        scrollTop: $('#product').offset().top - 80
+                    }, 800);
+                }
+            });
+            $('a[href="#service"]').click(function () {
+                if ($W > 750) {
+                    $('html,body').animate({
+                        scrollTop: $('#service').offset().top - 111
+                    }, 800);
+                } else {
+                    $('html,body').animate({
+                        scrollTop: $('#service').offset().top - 80
+                    }, 800);
+                }
+            });
+            $('a[href="#case"]').click(function () {
+                if ($W > 750) {
+                    $('html,body').animate({
+                        scrollTop: $('#case').offset().top - 111
+                    }, 800);
+                } else {
+                    $('html,body').animate({
+                        scrollTop: $('#case').offset().top - 80
+                    }, 800);
+                }
+            });
+            $('a[href="#contact"]').click(function () {
+                if ($W > 750) {
+                    $('html,body').animate({
+                        scrollTop: $('#contact').offset().top - 111
+                    }, 800);
+                } else {
+                    $('html,body').animate({
+                        scrollTop: $('#contact').offset().top - 80
+                    }, 800);
+                }
+            });
+
+            $('.banner').height($H);
+
+            let oneH = $('#product .flex.one').height();
+            $('.imgWp img').height(oneH);
+
+            setTimeout(function () {
+                $('a[href="#case"]').fadeIn().css('opacity', '1');
+            }, 1000); // 1000 毫秒 = 1 秒
+
+            //bar
+            const quote = document.getElementById('quote');
+            quote.innerHTML = `<span class="char">${quote.innerHTML.split("").join('</span><span class="char">')}</span>`;
+            TweenMax.staggerTo(".char", 0.5, { opacity: 1, yPercent: 50, }, 0.1);
+
+            // header cover: website enter animation
+            const headerCover = gsap.timeline();
+            headerCover.to(".loadingValue", 2, { width: "100%" })
+                .to(".loadingBar", 0.1, { display: 'none' })
+                .to("#quote", 0.1, { display: 'none' })
+                .to("#headerCover", 0.5, {
+                    opacity: 0, onComplete: function () {
+                        // 在淡出完成後可能需要額外的操作
+                        // 可以在 onComplete 函數中添加
+                        // 例如：將元素的 display 屬性設置為 'none'
+                        gsap.set("#headerCover", { display: 'none' });
+                    }
+                });
+
+
+                
+            // 預先加載背景圖
+            var img = new Image();
+            img.onload = function () {
+                // 圖片加載完成後顯示 banner
+                document.getElementById('banner').style.display = 'flex';
+            };
+            img.src = 'img/bannerV3.png'; // 背景圖片的 URL
+
+            //animation
+            AOS.init();
+
+            //silder
+            $('#carousel1').owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+
+            $('#carousel3').owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+
+            //Carousel
+            $('#carousel2').owlCarousel({
+                items: 6,
+                loop: true,
+                margin: 10,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    500: {
+                        items: 2
+                    },
+                    650: {
+                        items: 3
+                    },
+                    700: {
+                        items: 4
+                    },
+                    900: {
+                        items: 5
+                    },
+                    1180: {
+                        items: 6
+                    }
+                },
+                autoplay: false,
+                nav: true, // 啟用箭頭
+                dots: false, // 啟用圓點
+                autoplayHoverPause: true
+            });
+
+            //goTop
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1000) {
+                    $('.goTop').fadeIn(1000);
+                } else {
+                    $('.goTop').stop().fadeOut();
+                }
+            });
+            $('.goTop').click(function () {
+                $('html,body').animate({ scrollTop: 0 }, 1000);
+            });
+            //map
+            (function (g) {
+                var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+                b = b[c] || (b[c] = {});
+                var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+                    await (a = m.createElement("script"));
+                    e.set("libraries", [...r] + "");
+                    for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                    e.set("callback", c + ".maps." + q);
+                    a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                    d[q] = f;
+                    a.onerror = () => h = n(Error(p + " could not load."));
+                    a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                    m.head.append(a);
+                }));
+                d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n));
+            })({ key: "AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0", v: "weekly" });
+
+            let map;
+            async function initMap() {
+                const script = document.createElement('script');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&callback=initMap&libraries=places`;
+                script.defer = true;
+                document.head.appendChild(script);
+                const { Map } = await google.maps.importLibrary("maps");
+                const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+
+                script.onload = () => {
+                    // 等待地圖 API 載入完畢再初始化地圖
+                    const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
+
+                    map = new google.maps.Map(document.getElementById("map"), {
+                        center: myLatLng,
+                        mapId: 'd1c5bf3532fbaeda',
+                        zoom: 17,
+                    });
+
+                    let marker = new google.maps.marker.AdvancedMarkerElement({
+                        position: myLatLng,
+                        map,
+                        title: '地圖標記'
+                    });
+                };
+
+                script.onerror = () => {
+                    console.error("Google Maps JavaScript API 加載失敗");
+                };
+
+            }
+            // const script = document.createElement('script');
+            // script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&callback=initMap&libraries=places`;
+            // script.defer = true;
+            // document.head.appendChild(script);
+
+            // script.onerror = () => {
+            //     console.error("Google Maps JavaScript API 加載失敗");
+            // };
+            initMap();
+
+
+        });
+    </script>
+</body>
+
+</html>
