@@ -855,6 +855,8 @@ canvas {
 #service {
     position: relative;
     background: linear-gradient(to bottom, #acbaee 0%, #5b76d7 100%);
+    background: url('../img/cmsBG2.png') no-repeat center;
+    background-size: cover;
     width: 100%;
     height: 100vh;
 }
