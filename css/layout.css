@@ -877,6 +877,7 @@ canvas {
     width: 60vw;
     height: auto;
     margin: 0 auto;
+    display: block;
 }
 
 #service .cmsWP .r1 {
@@ -1756,7 +1757,7 @@ body.zh #service p {
     }
 
     #main .bannerText {
-        left: 14%;
+        left: 10%;
     }
 
     #main .bannerText p {
