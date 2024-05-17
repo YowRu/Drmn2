@@ -1146,6 +1146,14 @@ body.zh #service p {
         right: 20px;
         bottom: 20px;
     }
+
+    #service {
+        height: 290vh;
+    }
+
+    #service p {
+        bottom: -22vh;
+    }
 }
 
 @media(max-width:1400px) {
@@ -1154,11 +1162,11 @@ body.zh #service p {
     }
 
     #service .cmsWP {
-        margin-top: 44vh;
+        margin-top: 36vh;
     }
 
     #service {
-        height: 303vh;
+        height: 273vh;
     }
 }
 
@@ -1168,9 +1176,16 @@ body.zh #service p {
         display: block;
     }
 
-    #service {
-        height: 290vh;
+    #service>img {
+        padding-top: 12vh;
+        height: 55vh;
     }
+
+    #service {
+        height: 258vh;
+    }
+
+
 }
 
 @media(max-width:1280px) {
@@ -1187,6 +1202,11 @@ body.zh #service p {
     #main .slider img.two {
         object-position: top right;
     }
+
+    #service {
+        height: 244vh;
+    }
+
 }
 
 @media (max-width:1150px) {
@@ -1214,16 +1234,12 @@ body.zh #service p {
         width: 100%;
     }
 
-    #service {
-        height: 258vh;
-    }
-
-    #service p {
-        bottom: -22vh;
-    }
-
     #case .logoWp .flex li {
         width: 30%;
+    }
+
+    #service {
+        height: 226vh;
     }
 
     #contact .right,
@@ -1278,6 +1294,11 @@ body.zh #service p {
         width: 66px;
     }
 
+    #service>img {
+        padding-top: 12vh;
+        height: 55vh;
+    }
+
     #service p {
         font-size: 1.2rem;
     }
@@ -1308,6 +1329,10 @@ body.zh #service p {
         width: 96%;
     }
 
+    #service>img {
+        height: 47vh;
+    }
+
     #service p {
         width: 100vw;
         font-size: 1.05rem;
@@ -1321,7 +1346,11 @@ body.zh #service p {
 @media(max-width:850px) {
     #service p {
         width: 80vw;
-        margin: 0 auto;
+        left: 10vw;
+    }
+
+    #service {
+        height: 213vh;
     }
 
     #main .bannerText {
@@ -1456,6 +1485,12 @@ body.zh #service p {
 }
 
 @media(max-width:700px) {
+    #service {
+        height: 199vh;
+        background: url(../img/cmsBG2.png) no-repeat center 37px;
+        background-size: cover;
+    }
+
     #main .slider {
         display: none;
     }
@@ -1569,6 +1604,37 @@ body.zh #service p {
         object-position: 61%;
     }
 
+    #service {
+        height: 180vh;
+    }
+
+    #service .cmsWP .r1, #service .cmsWP .l1 {
+        display: none;
+    }
+
+    #service .cmsWP {
+        margin-top: 28vh;
+    }
+
+    #service .cmsWP .imac {
+        width: 72vw;
+    }
+
+    #service .cmsWP .l2 {
+        position: absolute;
+        left: 4vw;
+        bottom: 4vh;
+        z-index: 1;
+        width: 24vw;
+    }
+
+    #service .cmsWP .r2 {
+        position: absolute;
+        right: 5vw;
+        bottom: -1vh;
+        z-index: 1;
+        width: 30vw;
+    }
 }
 
 @media (max-width:630px) {
@@ -1584,6 +1650,7 @@ body.zh #service p {
 }
 
 @media(max-width:600px) {
+
     header .left a {
         width: 200px;
     }
@@ -1626,6 +1693,13 @@ body.zh #service p {
 }
 
 @media(max-width:555px) {
+    #service .cmsWP .imac {
+        width: 82vw;
+    }
+
+    body.zh #service p {
+        font-size: 1rem;
+    }
 
     #case .flex {
         width: 95%;
@@ -1779,14 +1853,15 @@ body.zh #service p {
     }
 
     #service {
-        height: 80vh;
-        padding-bottom: 20vh;
+        height: 157vh;
     }
 
     #service>img {
-        width: 95%;
-        height: auto;
-        padding-top: 22vh;
+        height: 41vh;
+    }
+
+    #service .cmsWP {
+        margin-top: 22vh;
     }
 }
 
@@ -1795,10 +1870,6 @@ body.zh #service p {
     #main p.title.white,
     #main #about p.title {
         font-size: 2rem;
-    }
-
-    #service {
-        padding-bottom: 15vh;
     }
 }
 
@@ -1825,20 +1896,6 @@ body.zh #service p {
         width: 90%;
     }
 
-
-    #service {
-        height: 60vh;
-        padding-bottom: 12vh;
-    }
-
-    #service>img {
-        width: 90%;
-        padding-top: 11vh;
-    }
-
-    #service p {
-        bottom: 4%;
-    }
 }
 
 @media (max-width:414px) {
@@ -1887,7 +1944,7 @@ body.zh #service p {
     }
 
     #service p {
-        left: 7px;
+        left: 0;
         font-size: 12px;
         width: 100%;
     }
