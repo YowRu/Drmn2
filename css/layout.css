@@ -851,7 +851,7 @@ canvas {
     background: url('../img/cmsBG2.png') no-repeat center top;
     background-size: cover;
     width: 100%;
-    height: 333vh;
+    height: 345vh;
 }
 
 #service>img {
@@ -864,7 +864,6 @@ canvas {
 
 #service .cmsWP {
     position: relative;
-    display: flex;
     width: 100vw;
     margin-top: 50vh;
 }
@@ -1133,11 +1132,21 @@ body.zh #service p {
     .goTop {
         right: 12%;
     }
+
+    #service {
+        height: 440vh;
+    }
 }
 
 @media(max-width:2600px) {
     header .right a {
         text-shadow: -.5px 0 #1d2ff2, 0 .5px #1d2ff2, .5px 0 #1d2ff2, 0 -.5px #1d2ff2;
+    }
+}
+
+@media (max-width:1550px) {
+    #service {
+        height: 333vh;
     }
 }
 
