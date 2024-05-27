@@ -17,18 +17,6 @@
     <link rel="stylesheet" href="css/layout.css" type="text/css">
     <title>Digital RMN</title>
 </head>
-<style>
-    canvas {
-        width: 100%;
-        height: 100%;
-        max-width: 500px;
-        max-height: 300px;
-        background: #000;
-        margin: auto;
-        filter: blur(2px) contrast(3);
-    }
-</style>
-
 <body>
     <div id="headerCover">
         <div id="quote" lang="welcome">Welcome</div>
@@ -102,7 +90,9 @@
                     retailers and brands, Give retailers another source of revenue and allow brands to increase exposure
                     opportunities.
                 </p>
-                <img src="img/layer1.png" alt="" class="layer" data-aos="zoom-in-up" data-aos-easing='ease-in' data-aos-duration="1800">
+                <img src="img/RMN.png" alt=""class="rmn" >
+                <img src="img/layer1.png" alt="" class="layer"/>
+                
             </div>
             <div class="row row1">
                 <p class="title bold" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="300" lang="about">
@@ -336,7 +326,6 @@
         </div>
     </div>
     <img src="img/top_ic.svg" alt="" class="goTop">
-
     <script>
         function initMap() {
             // 確保地圖元素存在
@@ -488,9 +477,21 @@
             //href
             let url = location.href;
             let ary = url.split('/');
+            
+            $(window).scroll(function () {
+                if($(this).scrollTop() > 350 && $(this).scrollTop() < 900){
+                    $('.layer').css({'animation': 'rotate 2s ease-in-out'});
+                    $('.rmn').css({'animation': 'rmn 4s ease-in-out'});
+                }else{
+                    $('.layer,.rmn').css({'animation':'none'});
+                }
+                console.log($(this).scrollTop(),$(this).scrollTop() > 350 && $(this).scrollTop() < 900);
+            })
 
 
             $('a[href="#about"]').click(function () {
+                $('.layer').css({'animation': 'rotate 2s ease-in-out'});//infinite
+                $('.rmn').css({'animation': 'rmn 4s ease-in-out'});//
                 if ($W > 750) {
                     $('html,body').animate({
                         scrollTop: $('#about').offset().top - 111
@@ -500,8 +501,6 @@
                         scrollTop: $('#about').offset().top - 80
                     }, 800);
                 }
-                $('.layer').css({ 'animation': 'rotate 3s ease-in-out' });
-
             });
 
             $('a[href="#product"]').click(function () {
@@ -553,22 +552,6 @@
             const layer = document.querySelector('.layer');
             const windowHeight = window.innerHeight; // 獲取視窗高度
 
-            // 監聽滾動事件
-            window.addEventListener('scroll', checkScrollPosition);
-
-            // 檢查滾動位置是否達到特定元素
-            function checkScrollPosition() {
-                const elementTop = layer.getBoundingClientRect().top + window.scrollY; // 獲取元素頂部相對於視窗的位置
-                const elementBottom = elementTop + layer.offsetHeight; // 獲取元素底部相對於視窗的位置
-
-                // 如果元素在視窗內部，啟動動畫
-                if (elementTop <= windowHeight && elementBottom >= 0) {
-                    layer.style.animation = "rotate 3s ease-in-out";
-                } else {
-                    layer.style.animation = "none"; // 如果元素不在視窗內部，關閉動畫
-                }
-            }
-
             $('.banner').height($H);
 
             let oneH = $('#product .flex.one').height();
@@ -590,9 +573,6 @@
                 .to("#quote", 0.1, { display: 'none' })
                 .to("#headerCover", 0.5, {
                     opacity: 0, onComplete: function () {
-                        // 在淡出完成後可能需要額外的操作
-                        // 可以在 onComplete 函數中添加
-                        // 例如：將元素的 display 屬性設置為 'none'
                         gsap.set("#headerCover", { display: 'none' });
                     }
                 });
