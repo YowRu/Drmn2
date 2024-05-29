@@ -490,7 +490,7 @@
                 // console.log($(this).scrollTop(),$(this).scrollTop() > 350 && $(this).scrollTop() < 900);
             });
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 350 && $(this).scrollTop() < 800) {
+                if ($(this).scrollTop() > 450 && $(this).scrollTop() < 500) {
                     canvasText();
                 }
             });
@@ -507,8 +507,8 @@
                     radius: 3,
                     move: 0.15,
                     pull: 0.15,
-                    dampen: 0.95,
-                    density: 2
+                    dampen: 0.85,
+                    density: 2//密度
                 }
 
                 let mouse = new Mouse(canvas)
