@@ -91,7 +91,6 @@
                     retailers and brands, Give retailers another source of revenue and allow brands to increase exposure
                     opportunities.
                 </p>
-                <!-- <img src="img/RMN.png" alt=""class="rmn" > -->
                 <img src="img/layer.png" alt="" class="layer" />
                 <canvas text="RMN" size=128></canvas>
             </div>
@@ -104,7 +103,7 @@
                     data-aos-delay='1000' lang="aboutDescription">Assisting businesses in delivering precise messages to
                     consumers through various media formats to increase conversion rates.</p>
                 <div class="flex">
-                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600'>
+                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600' class="block">
                         <img src="img/mission1.png" alt="">
                         <span class="title" lang="aboutNum1">First party database</span>
                         <span lang="aboutNumDescription1">First-hand information collected by companies from
@@ -480,20 +479,7 @@
             let url = location.href;
             let ary = url.split('/');
 
-            //scroll animation
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 350 && $(this).scrollTop() < 900) {
-                    $('.layer').css({ 'animation': 'rotate 1s ease-in-out' });
-                } else {
-                    $('.layer').css({ 'animation': 'none' });
-                }
-                // console.log($(this).scrollTop(),$(this).scrollTop() > 350 && $(this).scrollTop() < 900);
-            });
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 450 && $(this).scrollTop() < 500) {
-                    canvasText();
-                }
-            });
+            //canvas animation
             function canvasText() {
                 let ctx = document.querySelector('canvas').getContext('2d')
                 let canvas = ctx.canvas
@@ -502,13 +488,14 @@
                 canvas.width = canvas.getBoundingClientRect().width
                 canvas.height = canvas.getBoundingClientRect().height
 
+
                 let pixels = []
                 let animation = {
-                    radius: 3,
-                    move: 0.15,
-                    pull: 0.15,
-                    dampen: 0.85,
-                    density: 2//密度
+                    radius: 2,//圓圈大小
+                    move: 0.1,
+                    pull: 0.1,
+                    dampen: 0.93,//粒子好動程度，0.65幾乎不動，0.95很嗨
+                    density: 3//密度
                 }
 
                 let mouse = new Mouse(canvas)
@@ -518,13 +505,23 @@
                 frame()
 
                 function init() {
-                    draw.setText({
-                        font: `${fontSize}px monospace`,
-                        fillStyle: '#4075FF',
-                        textAlign: 'center',
-                        textBaseline: 'middle'
-                    })
-                    draw.fillText(text, (canvas.width - fontSize), canvas.height / 2);
+                    if ($W < 801) {
+                        draw.setText({
+                            font: `${fontSize - 28}px monospace`,
+                            fillStyle: '#4075FF',
+                            textAlign: 'center',
+                            textBaseline: 'middle'
+                        })
+                        draw.fillText(text, (canvas.width - fontSize - 28) - 10, canvas.height / 2);
+                    } else {
+                        draw.setText({
+                            font: `${fontSize}px monospace`,
+                            fillStyle: '#4075FF',
+                            textAlign: 'center',
+                            textBaseline: 'middle'
+                        })
+                        draw.fillText(text, (canvas.width - fontSize) - 10, canvas.height / 2);
+                    }
                     pixels = scene(ctx, animation.density)
                     for (var particle of pixels) {
                         particle.lx = particle.x
@@ -669,8 +666,35 @@
                 }
             }
 
+            //scroll animation
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 350 && $(this).scrollTop() < 900) {
+                    $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });
+                } else {
+                    $('.layer').css({ 'animation': 'none' });
+                }
+                // console.log($(this).scrollTop(),$(this).scrollTop() > 350 && $(this).scrollTop() < 900);
+            });
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 350 && $(this).scrollTop() < 500) {
+                    canvasText();
+                }
+            });
+
+            let canvasW = $('canvas').width();
+            let canvasH = $('canvas').height();
+            $('.row0 p.title').outerHeight();
+            $('.row0 p.description').outerHeight();
+            $('canvas').css({ 'left': ($W - canvasW) / 2 + 6, 'top': $('.row0 p.title').outerHeight() + $('.row0 p.description').outerHeight() + 39 });
+if($W<801){
+    $('canvas').css({ 'left': ($W - canvasW) / 2 + 6, 'top': $('.row0 p.title').outerHeight() + $('.row0 p.description').outerHeight() - 39 });
+}else if($W<601){
+    $('canvas').css({ 'left': ($W - canvasW) / 2 + 6, 'top': $('.row0 p.title').outerHeight() + $('.row0 p.description').outerHeight() - 78 }); 
+}
+
             $('a[href="#about"]').click(function () {
-                $('.layer').css({ 'animation': 'rotate 1s ease-in-out' });//infinite
+                $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });//infinite
                 canvasText();
                 if ($W > 750) {
                     $('html,body').animate({
