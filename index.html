@@ -701,9 +701,12 @@
                 // console.log($(this).scrollTop(),$(this).scrollTop() > 350 && $(this).scrollTop() < 900);
             });
 
+            //scroll canvas once
+            let hasRunCanvasText = false;
             $(window).scroll(function () {
-                if ($(this).scrollTop() > $H/2+100) {
+                if (!hasRunCanvasText && $(this).scrollTop() > $H / 2 + 100 && $H > $(this).scrollTop()) {
                     canvasText();
+                    hasRunCanvasText = true; // 設置為 true 以避免重複執行
                 }
             });
 
