@@ -18,6 +18,7 @@
     <!-- <link rel="stylesheet" href="css/border.css" type="text/css"> -->
     <title>Digital RMN</title>
 </head>
+
 <body>
     <div id="headerCover">
         <div id="quote" lang="welcome">Welcome</div>
@@ -32,7 +33,7 @@
                     <span></span>
                     <span></span>
                 </nav>
-                <a href="index.html" class="logo">
+                <a class="logo">
                     <h1>logo</h1>
                 </a>
             </div>
@@ -92,7 +93,8 @@
                     opportunities.
                 </p>
                 <img src="img/layer.png" alt="" class="layer" />
-                <img src="img/RMN.png" alt="" class="rmn" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="1000"  data-aos-delay='1000' >
+                <img src="img/RMN.png" alt="" class="rmn" data-aos="fade-up" data-aos-easing='ease-in'
+                    data-aos-duration="1000" data-aos-delay='1000'>
                 <canvas text="RMN" size=128></canvas>
             </div>
             <div class="row row1">
@@ -348,6 +350,22 @@
         }
 
         $(document).ready(function () {
+            //logo click
+            $('.logo').click(function () {
+                location.reload();
+                window.scrollTo(0, 0);
+            });
+
+            //load scroll top 
+            window.addEventListener('beforeunload', function () {
+                window.scrollTo(0, 0); // 設定滾動位置為頂部
+            });
+
+            window.addEventListener('load', function () {
+                window.scrollTo(0, 0); // 確保在頁面加載時滾動到頂部
+            });
+
+
             $('html,body').animate({
                 scrollTop: 0,
             }, 700)
@@ -483,7 +501,7 @@
             //canvas animation
             let layerW = $('.layer').width();
             let layerH = $('.layer').height();
-           $('canvas').css({ 'max-width': layerW*0.8, 'max-height': $H*0.7 });
+            $('canvas').css({ 'max-width': layerW * 0.8, 'max-height': $H * 0.7 });
             function canvasText() {
                 let ctx = document.querySelector('canvas').getContext('2d');
                 let canvas = ctx.canvas;
@@ -517,7 +535,9 @@
                     ctx.font = `${fontSize}px monospace`;
                     let metrics = ctx.measureText(text);
                     draw.fillText(text, (canvas.width - metrics.width) / 2, canvas.height / 2);
-                   
+                    if ($W < 750) {
+                        ctx.font = 88;
+                    }
                     // 初始化粒子效果
                     pixels = scene(ctx, animation.density);
                     for (var particle of pixels) {
@@ -536,31 +556,31 @@
                     if (match && match.length > 0) {
                         sizeInNumber = 0 - parseFloat(match[0]);
                     }
-                    
+
                     let rows = ctx.canvas.width / density;
                     let cols = ctx.canvas.height / density;
-                    let data = ctx.getImageData(rows/2-28 , 0, ctx.canvas.width, ctx.canvas.height);
+                    let data = ctx.getImageData(rows / 2 - 28, 0, ctx.canvas.width, ctx.canvas.height);
 
-                    if($W<=2048){
-                        data = ctx.getImageData(rows/2-28 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1800){
-                        data = ctx.getImageData(rows/2-30 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1600){
-                        data = ctx.getImageData(rows/2-40 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1500){
-                        data = ctx.getImageData(rows/2-41 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1400){
-                        data = ctx.getImageData(rows/2-42 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1300){
-                        data = ctx.getImageData(rows/2-43 , 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if($W<1200){
-                        data = ctx.getImageData(rows/2-44 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1100){
-                        data = ctx.getImageData(rows/2-45 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<1000){
-                        data = ctx.getImageData(rows/2-46 , 0, ctx.canvas.width, ctx.canvas.height);
-                    }else if($W<750){
-                        data = ctx.getImageData(20 , 0, ctx.canvas.width, ctx.canvas.height);
+                    if ($W <= 2048) {
+                        data = ctx.getImageData(rows / 2 - 28, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1800) {
+                        data = ctx.getImageData(rows / 2 - 30, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1600) {
+                        data = ctx.getImageData(rows / 2 - 40, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1500) {
+                        data = ctx.getImageData(rows / 2 - 41, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1400) {
+                        data = ctx.getImageData(rows / 2 - 42, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1300) {
+                        data = ctx.getImageData(rows / 2 - 43, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1200) {
+                        data = ctx.getImageData(rows / 2 - 44, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1100) {
+                        data = ctx.getImageData(rows / 2 - 45, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 1000) {
+                        data = ctx.getImageData(rows / 2 - 46, 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if ($W < 750) {
+                        data = ctx.getImageData(20, 0, ctx.canvas.width, ctx.canvas.height);
                     }
                     // console.log(rows/2,rows,cols);
                     for (let row = 0; row < rows; row++) {
@@ -682,7 +702,7 @@
             });
 
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 350 && $(this).scrollTop() < 500) {
+                if ($(this).scrollTop() > $H-200) {
                     canvasText();
                 }
             });
