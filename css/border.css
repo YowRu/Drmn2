@@ -1,0 +1,75 @@
+#about .row1 p {
+	position: relative;
+}
+
+#about .row1 p.block, #about .row1 p.block::before, #about .row1 p.block::after {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	box-sizing: border-box;
+}
+
+#about .row1 p.block {
+	height: 200px;
+	position: relative;
+	margin: 1%;
+	color: #25c1ed;
+	background: transparent;
+	padding: 20px;
+}
+
+#about .row1 p.block:last-child {
+	opacity: 0;
+}
+
+#about .row1 p.block span {
+	color: #707070;
+}
+
+#about .row1 p.block::before {
+	animation-delay: -4s;
+	box-sizing: border-box;
+}
+
+#about .row1 p.block::before,
+#about .row1 p.block::after {
+	content: '';
+	z-index: -1;
+	margin: -3%;
+	box-shadow: inset 0 0 0 2px;
+	animation: clipMe 6s linear infinite;
+	box-sizing: border-box;
+}
+
+:root {
+	--borderWidth: 400px;
+	--borderHeight: 240px;
+}
+
+@keyframes clipMe {
+	0%, 100% {
+		clip: rect(0px, var(--borderHeight), 2px, 0px);
+		-webkit-clip-path: rect(0px, var(--borderHeight), 2px, 0px);
+		background-color: var(--colorP);
+	}
+
+	25% {
+		clip: rect(0px, 2px, var(--borderHeight), 0px);
+		-webkit-clip-path: rect(0px, 2px, var(--borderHeight), 0px);
+		background-color: var(--colorT);
+	}
+
+	50% {
+		clip: rect(var(--borderWidth), var(--borderHeight), var(--borderHeight), 0px);
+		-webkit-clip-path: rect(var(--borderWidth), var(--borderHeight), var(--borderHeight), 0px);
+		background-color: var(--colorT);
+	}
+
+	75% {
+		clip: rect(0px, var(--borderHeight), var(--borderHeight), var(--borderWidth));
+		-webkit-clip-path: rect(0px, var(--borderHeight), var(--borderHeight), var(--borderWidth));
+		background-color: var(--colorT);
+	}
+}

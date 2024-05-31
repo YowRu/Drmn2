@@ -77,6 +77,10 @@
 }
 
 /**/
+body {
+    position: relative;
+}
+
 body ul,
 body ol,
 body li {
@@ -400,18 +404,19 @@ header.scroll .top a.login {
     background-color: #0287ec;
     color: #fff;
 }
+
 /*canvas*/
 canvas {
     width: 100%;
     height: 100%;
-    max-width: 300px;
+    max-width: 500px;
     max-height: 300px;
     background: transparent;
     margin: auto;
     filter: blur(0px) contrast(5);
     position: absolute;
-    left: 37%;
-    top: 20%;
+    left: 28%;
+    bottom: 27%;
     z-index: 1;
 }
 
@@ -421,42 +426,26 @@ canvas {
     margin-top: 110px;
     width: 100%;
     height: 100%;
-    transform:rotate3d(0, 0, 0, 140deg) scale(1.5, 1.5);
+    transform: rotate3d(0, 0, 0, 140deg) scale(1.5, 1.5);
 }
 
 @keyframes rotate {
     0% {
-        transform:rotate3d(0, 0, 0, 40deg) scale(4.5, 2.5);
+        transform: rotate3d(0, 0, 0, 40deg) scale(4.5, 2.5);
     }
 
     100% {
-        transform:rotate3d(0, 0, 0, 140deg) scale(1.5, 1.5);
+        transform: rotate3d(0, 0, 0, 140deg) scale(1.5, 1.5);
     }
 }
 
+/*rmn png*/
 .rmn {
+    display: none;
     position: absolute;
-    top: 20%;
-    left: 54%;
-    width: 108px;
-    animation: none;
-}
-
-@keyframes rmn {
-    0% {
-        top: 50%;
-        opacity: 0.01;
-    }
-
-    50% {
-        top: 20%;
-        opacity: 0.3;
-    }
-
-    100% {
-        top: 20%;
-        opacity: 1;
-    }
+    bottom: 33%;
+    left: 32%;
+    width: 36%;
 }
 
 /*goTop*/
@@ -630,11 +619,12 @@ canvas {
 #about .row1 p {
     line-height: 2.4rem;
     width: 65%;
+    position: relative;
 }
 
 #main .row1 {
     max-width: 1500px;
-    width: 90%;    
+    width: 90%;
     margin-top: 110px;
 }
 
@@ -660,14 +650,16 @@ canvas {
 }
 
 #main .flex p {
-    width: 33%;
+    width: 31%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-
+#main .row1 .flex p {
+    margin: 1%;
+}
 
 
 #main .flex span.title {
@@ -687,9 +679,11 @@ canvas {
 #main .flex p img {
     width: 80px;
 }
-#main p.small.title{
+
+#main p.small.title {
     font-weight: 300;
 }
+
 #main p.left {
     text-align: left;
     color: #6e6e6e;
@@ -726,7 +720,6 @@ canvas {
 #main .title {
     font-weight: 500;
     color: #6c6c6c;
-    padding-left: 1.5rem;
     font-size: 2.5rem;
     line-height: 38px;
     position: relative;
@@ -742,6 +735,7 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #main .flex {
@@ -1197,6 +1191,10 @@ body.zh #service p {
 }
 
 @media(max-width:1400px) {
+    canvas {
+        left: 29.5%;
+    }
+
     #main .flex {
         width: 90%;
     }
@@ -1235,8 +1233,13 @@ body.zh #service p {
 }
 
 @media(max-width:1200px) {
+
     header .WP {
         justify-content: space-around;
+    }
+
+    canvas {
+        left: 30.5%;
     }
 
     #main .slider img.two {
@@ -1250,8 +1253,6 @@ body.zh #service p {
 }
 
 @media (max-width:1150px) {
-
-
     body.zh #service p {
         font-size: 1.2rem;
     }
@@ -1260,7 +1261,12 @@ body.zh #service p {
         font-size: 1.4rem;
     }
 
+}
 
+@media(max-width:1100px) {
+    canvas {
+        left: 31.5%;
+    }
 }
 
 @media (max-width:1080px) {
@@ -1301,26 +1307,8 @@ body.zh #service p {
 }
 
 @media (max-width:1000px) {
-    .rmn {
-        top: 17%;
-        width: 90px;
-    }
-
-    @keyframes rmn {
-        0% {
-            top: 50%;
-            opacity: 0.01;
-        }
-
-        50% {
-            top: 17%;
-            opacity: 0.3;
-        }
-
-        100% {
-            top: 17%;
-            opacity: 1;
-        }
+    #about .row0 p, #about .row1 p {
+        width: 75%;
     }
 
     #main .slider img.two {
@@ -1366,7 +1354,21 @@ body.zh #service p {
     }
 }
 
+@media (max-width:950px) {
+    canvas {
+        left: 32.5%;
+    }
+}
+
 @media(max-width:900px) {
+    #about .row0 p, #about .row1 p {
+        width: 85%;
+    }
+
+    canvas {
+        left: 33.5%;
+    }
+
     #main .slider img.four {
         object-position: 8% 55%;
     }
@@ -1438,7 +1440,7 @@ body.zh #service p {
 }
 
 @media(max-width:800px) {
-   
+
     #main .bannerText p.title.white {
         font-size: 2.6rem;
         line-height: 3.5rem;
@@ -1532,6 +1534,31 @@ body.zh #service p {
 }
 
 @media(max-width:750px) {
+
+    canvas {
+        display: none;
+    }
+
+    .layer {
+        transform: rotate3d(0, -1, 0, 184deg) scale(2.5, 1.5);
+        margin-top: 80px;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate3d(0, -1, 0, 40deg) scale(4.5, 2.5);
+        }
+
+        100% {
+            transform: rotate3d(0, -1, 0, 184deg) scale(2.5, 1.5)
+        }
+    }
+
+    .rmn {
+        display: block;
+        bottom: 39%;
+    }
+
     #contact {
         flex-direction: column;
         align-items: center;
@@ -1714,7 +1741,6 @@ body.zh #service p {
 }
 
 @media(max-width:600px) {
-
     header .left a {
         width: 200px;
     }
@@ -1750,6 +1776,23 @@ body.zh #service p {
         font-size: 1rem;
     }
 
+    #main p.title {
+        font-size: 2.2rem;
+    }
+
+    #about .row0 p, #about .row1 p {
+        width: 90%;
+    }
+
+    #main p.description {
+        font-size: .95rem;
+    }
+
+    .rmn {
+        left: 38%;
+        width: 24%;
+    }
+
     #contact .left {
         padding: 50px 30px;
     }
@@ -1757,6 +1800,10 @@ body.zh #service p {
 }
 
 @media(max-width:555px) {
+    .rmn {
+        bottom: 35%;
+    }
+
     #service .cmsWP .imac {
         width: 82vw;
     }
@@ -1802,7 +1849,7 @@ body.zh #service p {
 
     #main p.description,
     #main .flex span {
-        font-size: .95rem;
+        font-size: .9rem;
     }
 
     #main .bannerText p.title span {
@@ -1900,19 +1947,13 @@ body.zh #service p {
 }
 
 @media(max-width:500px) {
-    .layer {
-        transform:rotate3d(0, 0, 0, 80deg) scale(3.5, 1.5);
+
+    #main p.description, #main .flex span {
+        font-size: .85rem;
+        line-height: 2rem;
+        width: 95%;
     }
-    
-    @keyframes rotate {
-        0% {
-            transform:rotate3d(0, 0, 0, 40deg) scale(6.5, 2.5);
-        }
-    
-        100% {
-            transform:rotate3d(0, 0, 0, 80deg) scale(3.5, 1.5);
-        }
-    }
+
     #headerCover #quote .char {
         font-size: 1.8rem;
     }
@@ -1956,6 +1997,10 @@ body.zh #service p {
         left: 17px;
     }
 
+    .rmn {
+        bottom: 31%;
+    }
+
     #main .banner img {
         height: 67px;
     }
@@ -1976,6 +2021,10 @@ body.zh #service p {
 }
 
 @media (max-width:414px) {
+    .rmn {
+        bottom: 29%;
+    }
+
     #main .row2 .flex.one {
         width: 80%;
     }
@@ -2047,6 +2096,10 @@ body.zh #service p {
     #main .bannerText p.en {
         width: 320px;
     }
+
+    .rmn {
+        bottom: 27%;
+    }
 }
 
 @media(max-width:350px) {
@@ -2054,4 +2107,7 @@ body.zh #service p {
         width: 90%;
     }
 
+    .rmn {
+        bottom: 25%;
+    }
 }

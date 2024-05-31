@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/border.css" type="text/css"> -->
     <title>Digital RMN</title>
 </head>
-
 <body>
     <div id="headerCover">
         <div id="quote" lang="welcome">Welcome</div>
@@ -92,6 +92,7 @@
                     opportunities.
                 </p>
                 <img src="img/layer.png" alt="" class="layer" />
+                <img src="img/RMN.png" alt="" class="rmn" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="1000"  data-aos-delay='1000' >
                 <canvas text="RMN" size=128></canvas>
             </div>
             <div class="row row1">
@@ -109,32 +110,32 @@
                         <span lang="aboutNumDescription1">First-hand information collected by companies from
                             consumers.</span>
                     </p>
-                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600'>
+                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600' class="block">
                         <img src="img/mission2.png" alt="">
                         <span class="title" lang="aboutNum2">Closed-loop attribution system</span>
                         <span lang="aboutNumDescription2">Effectively clarify the relationship between advertising spend
                             and sales.</span>
                     </p>
-                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600'>
+                    <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='600' class="block big">
                         <img src="img/mission3.png" alt="">
                         <span class="title" lang="aboutNum3">Context-locked advertising</span>
                         <span lang="aboutNumDescription3">The advertising content is related to the product and has a
                             strong shopping
                             orientation.</span>
                     </p>
-                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='500'>
+                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='500' class="block">
                         <img src="img/mission4.png" alt="">
                         <span class="title" lang="aboutNum4">Large-scale audience</span>
                         <span lang="aboutNumDescription4">Ensure a large number of consumers, enough to reach the target
                             customers.</span>
                     </p>
-                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='500'>
+                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='500' class="block">
                         <img src="img/mission5.png" alt="">
                         <span class="title" lang="aboutNum5">Marketing funnel</span>
                         <span lang="aboutNumDescription5">Meet current search needs and effectively guide to final
                             conversion.</span>
                     </p>
-                    <p></p>
+                    <p class="block"></p>
                 </div>
             </div>
         </div>
@@ -328,8 +329,8 @@
     </div>
     <img src="img/top_ic.svg" alt="" class="goTop">
     <script>
+        // 確保地圖元素存在
         function initMap() {
-            // 確保地圖元素存在
             if (document.getElementById('map')) {
                 const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
 
@@ -411,7 +412,6 @@
                 $('header .row1 .menu').css({ 'overflow-y': 'scroll' });
             }
 
-
             //resize   
             $(window).resize(function () {
                 let $H = $(window).height();
@@ -457,6 +457,7 @@
                 $('header .bg').show();
                 $('body').css('overflow', 'hidden');
             });
+
             $('header .menu .close').click(function () {
                 $('header .menu .close').removeClass('animation').addClass('back');
                 $('header .menu').animate({
@@ -480,16 +481,18 @@
             let ary = url.split('/');
 
             //canvas animation
+            let layerW = $('.layer').width();
+            let layerH = $('.layer').height();
+            $('canvas').css({ 'max-width': layerW*0.8, 'max-height': layerH });
             function canvasText() {
-                let ctx = document.querySelector('canvas').getContext('2d')
-                let canvas = ctx.canvas
+                let ctx = document.querySelector('canvas').getContext('2d');
+                let canvas = ctx.canvas;
                 let text = canvas.getAttribute('text');
                 let fontSize = canvas.getAttribute('size');
-                canvas.width = canvas.getBoundingClientRect().width
-                canvas.height = canvas.getBoundingClientRect().height
+                canvas.width = canvas.getBoundingClientRect().width;
+                canvas.height = canvas.getBoundingClientRect().height;
 
-
-                let pixels = []
+                let pixels = [];
                 let animation = {
                     radius: 2,//圓圈大小
                     move: 0.1,
@@ -497,87 +500,100 @@
                     dampen: 0.93,//粒子好動程度，0.65幾乎不動，0.95很嗨
                     density: 3//密度
                 }
+                let mouse = new Mouse(canvas);
+                let draw = new Draw(ctx);
 
-                let mouse = new Mouse(canvas)
-                let draw = new Draw(ctx)
-
-                init()
-                frame()
+                init();
+                frame();
 
                 function init() {
-                    if ($W < 801) {
-                        draw.setText({
-                            font: `${fontSize - 28}px monospace`,
-                            fillStyle: '#4075FF',
-                            textAlign: 'center',
-                            textBaseline: 'middle'
-                        })
-                        draw.fillText(text, (canvas.width - fontSize - 28) - 10, canvas.height / 2);
-                    } else {
-                        draw.setText({
-                            font: `${fontSize}px monospace`,
-                            fillStyle: '#4075FF',
-                            textAlign: 'center',
-                            textBaseline: 'middle'
-                        })
-                        draw.fillText(text, (canvas.width - fontSize) - 10, canvas.height / 2);
+                    draw.setText({
+                        font: `${fontSize}px monospace`,
+                        fillStyle: '#4075FF',
+                        textAlign: 'center',
+                        textBaseline: 'middle'
+                    });
+
+                    ctx.font = `${fontSize}px monospace`;
+                    let metrics = ctx.measureText(text);
+                    draw.fillText(text, (canvas.width - metrics.width) / 2, canvas.height / 2);
+                    if($W<750){
+                        ctx.font =88;
                     }
-                    pixels = scene(ctx, animation.density)
+                    // 初始化粒子效果
+                    pixels = scene(ctx, animation.density);
                     for (var particle of pixels) {
-                        particle.lx = particle.x
-                        particle.ly = particle.y
-                        particle.dx = Math.random() * 8 - 2
-                        particle.dy = Math.random() * 8 - 2
+                        particle.lx = particle.x;
+                        particle.ly = particle.y;
+                        particle.dx = Math.random() * 8 - 2;
+                        particle.dy = Math.random() * 8 - 2;
                     }
                 }
 
-                /*
-                * Get pixels positions 
-                * @Params: {ctx} 		 -> canvas context
-                * @Params: {density} -> animation.density
-                */
                 function scene(ctx, density) {
                     let pixelData = [];
-                    let data = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+                    let sizeInNumber;
+                    const fontString = ctx.font;
+                    const match = fontString.match(/\d+/);
+                    if (match && match.length > 0) {
+                        sizeInNumber = 0 - parseFloat(match[0]);
+                    }
+                    
                     let rows = ctx.canvas.width / density;
                     let cols = ctx.canvas.height / density;
+                    let data = ctx.getImageData(rows/2-28 , 0, ctx.canvas.width, ctx.canvas.height);
 
+                    if($W<=2048){
+                        data = ctx.getImageData(rows/2-28 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1800){
+                        data = ctx.getImageData(rows/2-30 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1600){
+                        data = ctx.getImageData(rows/2-40 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1500){
+                        data = ctx.getImageData(rows/2-41 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1400){
+                        data = ctx.getImageData(rows/2-42 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1300){
+                        data = ctx.getImageData(rows/2-43 , 0, ctx.canvas.width, ctx.canvas.height);
+                    } else if($W<1200){
+                        data = ctx.getImageData(rows/2-44 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1100){
+                        data = ctx.getImageData(rows/2-45 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<1000){
+                        data = ctx.getImageData(rows/2-46 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }else if($W<750){
+                        data = ctx.getImageData(20 , 0, ctx.canvas.width, ctx.canvas.height);
+                    }
+                    // console.log(rows/2,rows,cols);
                     for (let row = 0; row < rows; row++) {
                         for (let col = 0; col < cols; col++) {
-                            let pixelX = col * density + density / 2
-                            let pixelY = row * density + density / 2
-
+                            let pixelX = col * density + density / 2;
+                            let pixelY = row * density + density / 2;
                             for (let rp = 0; rp < density; rp++) {
                                 for (let rc = 0; rc < density; rc++) {
-                                    // pixel -> pixel id
-                                    let pixel = ((row * density + rp) * ctx.canvas.width + (col * density + rc)) * 4
+                                    let pixel = ((row * density + rp) * ctx.canvas.width + (col * density + rc)) * 4;
                                     let colors = {
                                         r: data.data[pixel],
                                         g: data.data[pixel + 1],
                                         b: data.data[pixel + 2],
-                                        a: data.data[pixel + 3],
-                                    }
+                                        a: data.data[pixel + 3]
+                                    };
                                     if (colors.a) {
-                                        pixelData.push({ x: pixelX, y: pixelY, color: colors })
+                                        pixelData.push({ x: pixelX, y: pixelY, color: colors });
                                         rp = density;
                                         rc = density;
                                     }
                                 }
                             }
-
-
                         }
                     }
-                    return pixelData
+                    return pixelData;
                 }
 
-                /*
-                * Animation Frames
-                */
+                /* Animation Frames*/
                 function frame() {
                     draw.clear()
                     requestAnimationFrame(frame)
-
                     for (var particle of pixels) {
                         let color = `rgba(${particle.color.r},${particle.color.g},${particle.color.b},${particle.color.a})`
                         let distance = distanceFromMouse(particle.x, particle.y, mouse.x, mouse.y)
@@ -590,16 +606,12 @@
                             particle['d' + ax] *= animation.dampen
                             particle['d' + ax] -= Math.sign(mouse[ax] - particle[ax]) * shift
                         }
-
                         draw.fillCircle(particle.x, particle.y, animation.radius, color)
                     }
                 }
 
-                /*
-                * Canvas Draw Object
-                *
+                /*Canvas Draw Object
                 * @Params: {ctx} -> canvas context
-                * 
                 * Prototypes: 
                 * - setText			-> setup text property
                 * - fillText		-> drawing text on canvas with fill property
@@ -610,7 +622,6 @@
                 function Draw(ctx) {
                     this.ctx = ctx
                     this.canvas = canvas
-
                     this.setText = proporty => {
                         for (let option in proporty) {
                             this.ctx[option] = proporty[option]
@@ -637,18 +648,14 @@
                     }
                 }
 
-                /*
-                * Distance function from mouse position
-                */
+                /* Distance function from mouse position*/
                 function distanceFromMouse(x, y, mX, mY) {
                     return Math.sqrt(Math.pow(Math.pow(x - mX, 2) + y - mY, 2))
                 }
 
-                /*
-                * Mouse position event
+                /*Mouse position event
                 * @Params: {canvas} -> html canvas element
-                * result: mouse.x and mouse.y
-                */
+                * result: mouse.x and mouse.y*/
                 function Mouse(canvas) {
                     this.x = 0;
                     this.y = 0;
@@ -666,7 +673,7 @@
                 }
             }
 
-            //scroll animation
+            //scroll animation (layer & canvas)
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 350 && $(this).scrollTop() < 900) {
                     $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });
@@ -682,17 +689,16 @@
                 }
             });
 
-            let canvasW = $('canvas').width();
-            let canvasH = $('canvas').height();
-            $('.row0 p.title').outerHeight();
-            $('.row0 p.description').outerHeight();
-            $('canvas').css({ 'left': ($W - canvasW) / 2 + 6, 'top': $('.row0 p.title').outerHeight() + $('.row0 p.description').outerHeight() + 39 });
-if($W<801){
-    $('canvas').css({ 'left': ($W - canvasW) / 2 + 6, 'top': $('.row0 p.title').outerHeight() + $('.row0 p.description').outerHeight() - 39 });
-}else if($W<601){
-    $('canvas').css({ 'left': ($W - canvasW) / 2 + 6, 'top': $('.row0 p.title').outerHeight() + $('.row0 p.description').outerHeight() - 78 }); 
-}
+            //border animation
+            // let bigH = $('#about .row1 p.block.big').outerHeight();
+            // let bigW = $('#about .row1 p.block.big').outerWidth();
 
+            // $('#about .row1 p.block').height(bigH);
+
+            // document.documentElement.style.setProperty('--borderWidth', bigW + 40 + 'px');
+            // document.documentElement.style.setProperty('--borderHeight', bigH + 40 + 'px');
+
+            //nav click
             $('a[href="#about"]').click(function () {
                 $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });//infinite
                 canvasText();
