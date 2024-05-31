@@ -691,17 +691,16 @@
                 }
             }
 
-            //scroll animation (layer & canvas)
+            //scroll layer animation once
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 350 && $(this).scrollTop() < 900) {
-                    $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });
+                if ($(this).scrollTop() > $H / 2 -100 && $H > $(this).scrollTop()) {
+                    $('.layer').css({ 'animation': 'rotate 3s ease-in-out' });
                 } else {
                     $('.layer').css({ 'animation': 'none' });
                 }
-                // console.log($(this).scrollTop(),$(this).scrollTop() > 350 && $(this).scrollTop() < 900);
             });
 
-            //scroll canvas once
+            //scroll canvas animation once
             let hasRunCanvasText = false;
             $(window).scroll(function () {
                 if (!hasRunCanvasText && $(this).scrollTop() > $H / 2 + 100 && $H > $(this).scrollTop()) {
