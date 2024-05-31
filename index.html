@@ -707,6 +707,8 @@
                 if (!hasRunCanvasText && $(this).scrollTop() > $H / 2 + 100 && $H > $(this).scrollTop()) {
                     canvasText();
                     hasRunCanvasText = true; // 設置為 true 以避免重複執行
+                }else if($(this).scrollTop()<236){
+                    hasRunCanvasText = false;
                 }
             });
 
