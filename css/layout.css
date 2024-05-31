@@ -123,6 +123,10 @@ body {
     overflow-x: hidden;
 }
 
+#about, #banner, #product, #service, #case {
+    overflow-x: hidden;
+}
+
 header {
     width: 100%;
     position: fixed;
@@ -379,6 +383,10 @@ header .right a {
     color: #fff;
     position: relative;
     transition: all .5S;
+}
+
+.logo {
+    cursor: pointer;
 }
 
 /*language*/
@@ -1622,11 +1630,7 @@ body.zh #service p {
         object-position: 41%;
     }
 
-    #about,
-    #banner,
-    #product,
-    #service,
-    #case {
+    #about, #banner, #product, #service, #case {
         width: 100vw;
         overflow-x: hidden;
     }
@@ -1999,6 +2003,10 @@ body.zh #service p {
 
     .rmn {
         bottom: 31%;
+    }
+
+    #main .bannerText p.title.white {
+        width: 90%;
     }
 
     #main .banner img {
