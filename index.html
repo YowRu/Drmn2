@@ -517,9 +517,7 @@
                     ctx.font = `${fontSize}px monospace`;
                     let metrics = ctx.measureText(text);
                     draw.fillText(text, (canvas.width - metrics.width) / 2, canvas.height / 2);
-                    if($W<750){
-                        ctx.font =88;
-                    }
+                   
                     // 初始化粒子效果
                     pixels = scene(ctx, animation.density);
                     for (var particle of pixels) {
