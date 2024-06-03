@@ -18,6 +18,7 @@
     <!-- <link rel="stylesheet" href="css/border1.css" type="text/css"> -->
     <title>Digital RMN</title>
 </head>
+
 <body>
     <div id="headerCover">
         <div id="quote" lang="welcome">Welcome</div>
@@ -94,7 +95,7 @@
                 <div class="about_imgWp">
                     <img src="img/layer.png" alt="" class="layer" />
                     <img src="img/RMN.png" alt="" class="rmn" data-aos="fade-up" data-aos-easing='ease-in'
-                    data-aos-duration="1000" data-aos-delay='1000'>
+                        data-aos-duration="1000" data-aos-delay='1000'>
                 </div>
             </div>
             <div class="row row1">
@@ -380,10 +381,6 @@
                 window.scrollTo(0, 0); // 確保在頁面加載時滾動到頂部
             });
 
-
-            $('html,body').animate({
-                scrollTop: 0,
-            }, 700)
             let $H = $(window).height();
             let $W = $(window).width();
 
@@ -467,10 +464,18 @@
             let scrollThreshold = 80;
 
             $(document).scroll(function () {
-                if ($(this).scrollTop() > scrollThreshold) {
-                    header.addClass('scroll');
-                } else {
-                    header.removeClass('scroll');
+                if ($W < 450 ) {
+                    if($(this).scrollTop() > 10){
+                        header.addClass('scroll');
+                    }else {
+                        header.removeClass('scroll');
+                    }
+                } else if ($W > 450) {
+                    if ($(this).scrollTop() > scrollThreshold) {
+                        header.addClass('scroll');
+                    } else {
+                        header.removeClass('scroll');
+                    }
                 }
             });
 
@@ -515,7 +520,7 @@
 
             //scroll layer animation once
             $(window).scroll(function () {
-                if ($(this).scrollTop() > $H / 2 -100 && $H > $(this).scrollTop()) {
+                if ($(this).scrollTop() > $H / 2 - 100 && $H > $(this).scrollTop()) {
                     $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });
                 } else {
                     $('.layer').css({ 'animation': 'none' });
@@ -525,13 +530,13 @@
             //border animation
             $(window).scroll(function () {
                 console.log($(this).scrollTop());
-                if ($(this).scrollTop() > 2840 && $(this).scrollTop() <3500) {
-                    $('.circle-wrap .mask .fill, .circle-wrap .mask.full').css({'animation':'fill ease-in-out 2s both'});
-                }else{
-                    $('.circle-wrap .mask .fill, .circle-wrap .mask.full').css({'animation':'none'});
+                if ($(this).scrollTop() > 2840 && $(this).scrollTop() < 3500) {
+                    $('.circle-wrap .mask .fill, .circle-wrap .mask.full').css({ 'animation': 'fill ease-in-out 2s both' });
+                } else {
+                    $('.circle-wrap .mask .fill, .circle-wrap .mask.full').css({ 'animation': 'none' });
                 }
             });
-            
+
             //nav click
             $('a[href="#about"]').click(function () {
                 $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });//infinite
