@@ -1965,7 +1965,8 @@ body.zh #service p {
 @media(max-width:480px) {
 
     #main p.title.white,
-    #main #about p.title {
+    #main p.title.bold,
+    #main p.small.title {
         font-size: 2rem;
     }
 }
@@ -2045,7 +2046,8 @@ body.zh #service p {
         width: 50%;
     }
 
-    #main .title {
+    #main .title, #main p.small.title,
+    #main p.title.bold {
         font-size: 1.7rem;
     }
 
