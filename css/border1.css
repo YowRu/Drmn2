@@ -1,0 +1,56 @@
+/* https://codeconvey.com/css-percentage-circle/ */
+  
+  .circle-wrap {
+    margin: 50px auto;
+    border: 13px solid white;
+    width: 254px;
+    height: 254px;
+    background: #E2E3E6;
+    border-radius: 50%;
+  }
+  
+  .circle-wrap .mask,
+  .circle-wrap .fill {
+    width: 254px;
+    height: 254px;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .circle-wrap .mask {
+    clip: rect(0px, 254px, 254px, 127px);
+  }
+  
+  .circle-wrap .mask .fill {
+    clip: rect(0px, 127px, 254px, 0px);
+    background-color: #009F41;
+    animation: fill ease-in-out 3s both;
+  }
+  
+  .circle-wrap .mask.full {
+    animation: fill ease-in-out 3s both;
+  }
+  
+  @keyframes fill {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .circle-wrap .inside-circle {
+    width: 196px;
+    height: 196px;
+    border-radius: 50%;
+    background: #fff;
+    line-height: 196px;
+    text-align: center;
+    margin-top: 29px;
+    margin-left: 29px;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 2em;
+  }

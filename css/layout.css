@@ -416,26 +416,14 @@ header.scroll .top a.login {
     background-color: #0287ec;
     color: #fff;
 }
-
-/*canvas*/
-canvas {
-    width: 100%;
-    height: 100%;
-    max-width: 500px;
-    max-height: 300px;
-    background: transparent;
-    margin: auto;
-    filter: blur(0px) contrast(5);
-    position: absolute;
-    left: 33%;
-    bottom: 27%;
-    z-index: 1;
+.about_imgWp{
+    margin-top: 110px;
+    position: relative;
 }
 
 /*layer*/
 .layer {
     animation: none;
-    margin-top: 110px;
     width: 100%;
     height: 100%;
     transform: rotate3d(0, 0, 0, 140deg) scale(1.5, 1.5);
@@ -454,11 +442,10 @@ canvas {
 
 /*rmn png*/
 .rmn {
-    display: none;
     position: absolute;
-    bottom: 33%;
-    left: 32%;
-    width: 36%;
+    top: -3vh;
+    left: 39vw;
+    width: 24vw;
 }
 
 /*goTop*/
@@ -1204,9 +1191,6 @@ body.zh #service p {
 }
 
 @media(max-width:1400px) {
-    canvas {
-        left: 29.5%;
-    }
 
     #main .flex {
         width: 90%;
@@ -1236,7 +1220,6 @@ body.zh #service p {
         height: 258vh;
     }
 
-
 }
 
 @media(max-width:1280px) {
@@ -1249,10 +1232,6 @@ body.zh #service p {
 
     header .WP {
         justify-content: space-around;
-    }
-
-    canvas {
-        left: 30.5%;
     }
 
     #main .slider img.two {
@@ -1274,12 +1253,6 @@ body.zh #service p {
         font-size: 1.4rem;
     }
 
-}
-
-@media(max-width:1100px) {
-    canvas {
-        left: 31.5%;
-    }
 }
 
 @media (max-width:1080px) {
@@ -1369,21 +1342,11 @@ body.zh #service p {
     }
 }
 
-@media (max-width:950px) {
-    canvas {
-        left: 32.5%;
-    }
-}
-
 @media(max-width:900px) {
 
     #about .row0 p,
     #about .row1 p {
         width: 85%;
-    }
-
-    canvas {
-        left: 33.5%;
     }
 
     #main .slider img.four {
@@ -1551,14 +1514,8 @@ body.zh #service p {
 }
 
 @media(max-width:750px) {
-
-    canvas {
-        display: none;
-    }
-
     .layer {
         transform: rotate3d(0, -1, 0, 184deg) scale(2.5, 1.5);
-        margin-top: 80px;
     }
 
     @keyframes rotate {
@@ -1572,7 +1529,6 @@ body.zh #service p {
     }
 
     .rmn {
-        display: block;
         bottom: 39%;
     }
 

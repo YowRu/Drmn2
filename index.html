@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/layout.css" type="text/css">
-    <link rel="stylesheet" href="css/border.css" type="text/css">
+    <link rel="stylesheet" href="css/border1.css" type="text/css">
     <title>Digital RMN</title>
 </head>
 <body>
@@ -91,10 +91,11 @@
                     retailers and brands, Give retailers another source of revenue and allow brands to increase exposure
                     opportunities.
                 </p>
-                <img src="img/layer.png" alt="" class="layer" />
-                <img src="img/RMN.png" alt="" class="rmn" data-aos="fade-up" data-aos-easing='ease-in'
+                <div class="about_imgWp">
+                    <img src="img/layer.png" alt="" class="layer" />
+                    <img src="img/RMN.png" alt="" class="rmn" data-aos="fade-up" data-aos-easing='ease-in'
                     data-aos-duration="1000" data-aos-delay='1000'>
-                <canvas text="RMN" size=128></canvas>
+                </div>
             </div>
             <div class="row row1">
                 <p class="small title" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="300"
@@ -138,6 +139,21 @@
                     </p>
                     <p class="block"></p>
                 </div>
+            </div>
+            <div class="row row2">
+                <div class="circle-wrap">
+                    <div class="mask full">
+                        <div class="fill"></div>
+                      </div>
+                    
+                    <div class="mask half">
+                      <div class="fill"></div>
+                    </div>
+                  
+                    <div class="inside-circle">
+                      68.9 point
+                    </div>
+                  </div>
             </div>
         </div>
         <div id="product">
@@ -497,228 +513,25 @@
             let url = location.href;
             let ary = url.split('/');
 
-            //canvas animation
-            let layerW = $('.layer').width();
-            let layerH = $('.layer').height();
-            $('canvas').css({ 'max-width': layerW * 0.8, 'max-height': $H * 0.7 });
-            function canvasText() {
-                let ctx = document.querySelector('canvas').getContext('2d');
-                let canvas = ctx.canvas;
-                let text = canvas.getAttribute('text');
-                let fontSize = canvas.getAttribute('size');
-                canvas.width = canvas.getBoundingClientRect().width;
-                canvas.height = canvas.getBoundingClientRect().height;
-
-                let pixels = [];
-                let animation = {
-                    radius: 2,//圓圈大小
-                    move: 0.1,
-                    pull: 0.1,
-                    dampen: 0.8,//粒子好動程度，0.65幾乎不動，0.95很嗨
-                    density: 2//密度
-                }
-                let mouse = new Mouse(canvas);
-                let draw = new Draw(ctx);
-
-                init();
-                frame();
-
-                function init() {
-                    draw.setText({
-                        font: `${fontSize}px monospace`,
-                        fillStyle: '#4075FF',
-                        textAlign: 'center',
-                        textBaseline: 'middle'
-                    });
-
-                    ctx.font = `${fontSize}px monospace`;
-                    let metrics = ctx.measureText(text);
-                    draw.fillText(text, (canvas.width - metrics.width) / 2, canvas.height / 2);
-                    if ($W < 750) {
-                        ctx.font = 88;
-                    }
-                    // 初始化粒子效果
-                    pixels = scene(ctx, animation.density);
-                    for (var particle of pixels) {
-                        particle.lx = particle.x;
-                        particle.ly = particle.y;
-                        particle.dx = Math.random() * 8 - 2;
-                        particle.dy = Math.random() * 8 - 2;
-                    }
-                }
-
-                function scene(ctx, density) {
-                    let pixelData = [];
-                    let sizeInNumber;
-                    const fontString = ctx.font;
-                    const match = fontString.match(/\d+/);
-                    if (match && match.length > 0) {
-                        sizeInNumber = 0 - parseFloat(match[0]);
-                    }
-
-                    let rows = ctx.canvas.width / density;
-                    let cols = ctx.canvas.height / density;
-                    let data = ctx.getImageData(rows / 2 - 28, 0, ctx.canvas.width, ctx.canvas.height);
-
-                    if ($W <= 2048) {
-                        data = ctx.getImageData(rows / 2 - 28, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1800) {
-                        data = ctx.getImageData(rows / 2 - 30, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1600) {
-                        data = ctx.getImageData(rows / 2 - 40, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1500) {
-                        data = ctx.getImageData(rows / 2 - 41, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1400) {
-                        data = ctx.getImageData(rows / 2 - 42, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1300) {
-                        data = ctx.getImageData(rows / 2 - 43, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1200) {
-                        data = ctx.getImageData(rows / 2 - 44, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1100) {
-                        data = ctx.getImageData(rows / 2 - 45, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 1000) {
-                        data = ctx.getImageData(rows / 2 - 46, 0, ctx.canvas.width, ctx.canvas.height);
-                    } else if ($W < 750) {
-                        data = ctx.getImageData(20, 0, ctx.canvas.width, ctx.canvas.height);
-                    }
-                    // console.log(rows/2,rows,cols);
-                    for (let row = 0; row < rows; row++) {
-                        for (let col = 0; col < cols; col++) {
-                            let pixelX = col * density + density / 2;
-                            let pixelY = row * density + density / 2;
-                            for (let rp = 0; rp < density; rp++) {
-                                for (let rc = 0; rc < density; rc++) {
-                                    let pixel = ((row * density + rp) * ctx.canvas.width + (col * density + rc)) * 4;
-                                    let colors = {
-                                        r: data.data[pixel],
-                                        g: data.data[pixel + 1],
-                                        b: data.data[pixel + 2],
-                                        a: data.data[pixel + 3]
-                                    };
-                                    if (colors.a) {
-                                        pixelData.push({ x: pixelX, y: pixelY, color: colors });
-                                        rp = density;
-                                        rc = density;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    return pixelData;
-                }
-
-                /* Animation Frames*/
-                function frame() {
-                    draw.clear()
-                    requestAnimationFrame(frame)
-                    for (var particle of pixels) {
-                        let color = `rgba(${particle.color.r},${particle.color.g},${particle.color.b},${particle.color.a})`
-                        let distance = distanceFromMouse(particle.x, particle.y, mouse.x, mouse.y)
-                        let shift = 1 / distance * 6
-
-                        for (var ax of ['x', 'y']) {
-                            particle[ax] += particle['d' + ax]
-                            particle['d' + ax] += (Math.random() - 0.1) * animation.move
-                            particle['d' + ax] -= Math.sign(particle[ax] - particle['l' + ax]) * animation.pull
-                            particle['d' + ax] *= animation.dampen
-                            particle['d' + ax] -= Math.sign(mouse[ax] - particle[ax]) * shift
-                        }
-                        draw.fillCircle(particle.x, particle.y, animation.radius, color)
-                    }
-                }
-
-                /*Canvas Draw Object
-                * @Params: {ctx} -> canvas context
-                * Prototypes: 
-                * - setText			-> setup text property
-                * - fillText		-> drawing text on canvas with fill property
-                * - strokeText	-> drawing text on canvas with stroke color property
-                * - fillCircle	-> drawing circle on canvas with fill color property
-                * - clear				-> to clean the canvas 
-                */
-                function Draw(ctx) {
-                    this.ctx = ctx
-                    this.canvas = canvas
-                    this.setText = proporty => {
-                        for (let option in proporty) {
-                            this.ctx[option] = proporty[option]
-                        }
-                    }
-
-                    this.fillText = (text, x, y) => {
-                        this.ctx.fillText(text, x, y);
-                    }
-
-                    this.strokeText = (text, x, y,) => {
-                        this.ctx.strokeText(text, x, y)
-                    }
-
-                    this.fillCircle = (x, y, radius, color) => {
-                        this.ctx.beginPath()
-                        this.ctx.arc(x, y, radius, 0, Math.PI * 2)
-                        if (color) this.ctx.fillStyle = color
-                        this.ctx.fill()
-                    }
-
-                    this.clear = () => {
-                        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-                    }
-                }
-
-                /* Distance function from mouse position*/
-                function distanceFromMouse(x, y, mX, mY) {
-                    return Math.sqrt(Math.pow(Math.pow(x - mX, 2) + y - mY, 2))
-                }
-
-                /*Mouse position event
-                * @Params: {canvas} -> html canvas element
-                * result: mouse.x and mouse.y*/
-                function Mouse(canvas) {
-                    this.x = 0;
-                    this.y = 0;
-                    this.canvas = canvas;
-
-                    this.canvas.addEventListener('mousemove', (e) => {
-                        this.x = e.offsetX;
-                        this.y = e.offsetY;
-                    });
-
-                    this.canvas.addEventListener('mouseleave', (e) => {
-                        this.x = -100;
-                        this.y = -100;
-                    });
-                }
-            }
-
             //scroll layer animation once
             $(window).scroll(function () {
                 if ($(this).scrollTop() > $H / 2 -100 && $H > $(this).scrollTop()) {
-                    $('.layer').css({ 'animation': 'rotate 3s ease-in-out' });
+                    $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });
                 } else {
                     $('.layer').css({ 'animation': 'none' });
                 }
             });
 
-            //scroll canvas animation once
-            let hasRunCanvasText = false;
+            //border animation
             $(window).scroll(function () {
-                if (!hasRunCanvasText && $(this).scrollTop() > $H / 2 + 100 && $H > $(this).scrollTop()) {
-                    canvasText();
-                    hasRunCanvasText = true; // 設置為 true 以避免重複執行
-                }else if($(this).scrollTop()<236){
-                    hasRunCanvasText = false;
+                console.log($(this).scrollTop());
+                if ($(this).scrollTop() > 2840 && $(this).scrollTop() <3500) {
+                    $('.circle-wrap .mask .fill, .circle-wrap .mask.full').css({'animation':'fill ease-in-out 2s both'});
+                }else{
+                    $('.circle-wrap .mask .fill, .circle-wrap .mask.full').css({'animation':'none'});
                 }
             });
-
-            //border animation
-            // let bigH = $('#about .row1 p.block.big').outerHeight();
-            // let bigW = $('#about .row1 p.block.big').outerWidth();
-
-            // $('#about .row1 p.block').height(bigH);
-
-            // document.documentElement.style.setProperty('--borderWidth', bigW + 40 + 'px');
-            // document.documentElement.style.setProperty('--borderHeight', bigH + 40 + 'px');
-
+            
             //nav click
             $('a[href="#about"]').click(function () {
                 $('.layer').css({ 'animation': 'rotate 2s ease-in-out' });//infinite
