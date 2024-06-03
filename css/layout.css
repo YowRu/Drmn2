@@ -2116,7 +2116,8 @@ body.zh #service p {
 
 @media(max-width:375px) {
     #main #carousel3 {
-        top: 14vh;
+        top: 10vh;
+        right: 6vw;
     }
 
     #main .slider img {
