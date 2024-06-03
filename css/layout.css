@@ -2082,11 +2082,15 @@ body.zh #service p {
 
 @media (max-width:414px) {
     #main .banner::before {
-        top: 3vh;
+        top: 4vh;
+        background-size: contain;
     }
 
     #main #carousel3 {
-        top: 2vh;
+        top: 5vh;
+    }
+    #main .slider img{
+        height: 94vh;
     }
 
     .rmn {
@@ -2153,10 +2157,7 @@ body.zh #service p {
 }
 
 @media(max-width:400px) {
-    #main .banner::before {
-        top: 4vh;        
-        background-size: cover;
-    }
+    
 
     #main #carousel3 {
         top: 4vh;
@@ -2182,10 +2183,14 @@ body.zh #service p {
 }
 
 @media(max-width:375px) {
-    #main .bannerText p.en {
+    /* #main .bannerText p.en {
         width: 320px;
-    }
+    } */
 
+    #main .banner::before{
+        top: 6vh;
+        background-size: contain;
+    }
     .rmn {
         bottom: 27%;
     }
