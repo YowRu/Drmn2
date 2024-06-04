@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -456,8 +455,8 @@
                 if($W < 551){
                     let deviceW = $W*0.87;
                     let deviceH = $H*0.9;
-                    $('#main #carousel3').css({'height':deviceH,'width':deviceW,'top':$H-deviceH+15});
-                    $('#main .slider img').height(deviceH);
+                    $('#main #carousel3').css({'height':deviceH,'width':deviceW,'right':($W-deviceW)/2});
+                    $('#main .slider img').css({'height':deviceH,'object-position':'bottom'});
                 }
             });
 
@@ -603,10 +602,9 @@
             if($W < 551){
                     let deviceW = $W*0.87;
                     let deviceH = $H*0.9;
-                    $('#main #carousel3').css({'height':deviceH,'width':deviceW,'top':$H-deviceH+15});
-                    $('#main .slider img').height(deviceH);
-                     alert(`W:${$W},H:${$H},top:${$H-deviceH+15}`);
-
+                    $('#main #carousel3').css({'height':deviceH,'width':deviceW,'right':($W-deviceW)/2,'top':$H-deviceH});
+                    $('#main .slider img').css({'height':deviceH,'object-position':'bottom'});
+                     alert(`W:${$W},H:${$H},top:${$H-deviceH}`);
             }
            
 
