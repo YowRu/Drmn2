@@ -459,9 +459,9 @@
                     let cH=$('#main #carousel3').height();
                     $('#main .slider img').width(deviceW*0.89);
                     $('#main .slider img').height(deviceH*0.89);
-                    $('#main #carousel3').css({'top':cH-deviceH+10});
+                    $('#main #carousel3').css({'top':cH-deviceH});
                   
-                    alert(`deviceW:${deviceW}, H:${deviceH}`);
+                    alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH}`);
                 }
             });
 
@@ -611,7 +611,8 @@
                 $('#main .slider img').width(deviceW*0.89);
                 $('#main .slider img').height(deviceH*0.89);
                 let cH=$('#main #carousel3').height();
-                $('#main #carousel3').css({'top':cH-deviceH+10});
+                $('#main #carousel3').css({'top':cH-deviceH});
+                alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH}`);
             }
 
             let oneH = $('#product .flex.one').height();
