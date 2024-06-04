@@ -78,9 +78,9 @@
             <div class="item"><img src="img/slider/S__9.png" class="nine" /></div>
         </div>
         <div class="slider owl-carousel owl-theme" id="carousel3">
-            <div class="item"><img src="img/bannerM/1.png" /></div>
-            <div class="item"><img src="img/bannerM/2.png" /></div>
-            <div class="item"><img src="img/bannerM/3.png" /></div>
+            <div class="item"><img src="img/bannerM/11.png" /></div>
+            <div class="item"><img src="img/bannerM/12.png" /></div>
+            <div class="item"><img src="img/bannerM/13.png" /></div>
         </div>
         <div id="about">
             <div class="row row0">
@@ -456,14 +456,14 @@
                 if($W < 551){
                     let deviceW = $W*0.87;
                     let deviceH = $H*0.9;
-                    let cH=$('#main #carousel3').height();
-                    let cW=$('#main #carousel3').width();
-                    $('#main .slider img').width(deviceW*0.89);
-                    $('#main .slider img').height(deviceH*0.89);
-                    $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
+                    $('#main #carousel3').height(deviceH);
+                    $('#main #carousel3').width(deviceW);
+                    // $('#main .slider img').width(deviceW*0.89);
+                    // $('#main .slider img').height(deviceH*0.89);
+                    // $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
                   
-                    let n=(cH-deviceH)/$H*100;
-                alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH},top:${n}`);
+                    // let n=(cH-deviceH)/$H*100;
+                alert(`dW:${deviceW}, dH:${deviceH}, cH:${cH},top:${n}`);
                 }
             });
 
@@ -607,16 +607,17 @@
 
 
             $('.banner').height($H);
-            if($W<551){
-                let deviceW=$W*0.87;
-                let deviceH=$H*0.9;
-                $('#main .slider img').width(deviceW*0.89);
-                $('#main .slider img').height(deviceH*0.89);
-                let cH=$('#main #carousel3').height();
-                $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
-                let n=(cH-deviceH)/$H*100;
-                alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH},top:${n}`);
-            }
+            if($W < 551){
+                    let deviceW = $W*0.87;
+                    let deviceH = $H*0.9;
+                    $('#main #carousel3').height(deviceH);
+                    $('#main #carousel3').width(deviceW);
+                    // $('#main .slider img').width(deviceW*0.89);
+                    // $('#main .slider img').height(deviceH*0.89);
+                    // $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
+                  
+                    // let n=(cH-deviceH)/$H*100;
+                alert(`dW:${deviceW}, dH:${deviceH}, cH:${cH},top:${n}`);}
 
             let oneH = $('#product .flex.one').height();
             $('.imgWp img').height(oneH);
