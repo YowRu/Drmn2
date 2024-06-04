@@ -1930,7 +1930,6 @@ body.zh #service p {
 }
 
 @media(max-width:500px) {
-
     #main p.description,
     #main .flex span {
         font-size: .85rem;
@@ -1968,7 +1967,6 @@ body.zh #service p {
 }
 
 @media(max-width:480px) {
-
     #main p.title.white,
     #main p.title.bold,
     #main p.small.title {
@@ -2001,25 +1999,16 @@ body.zh #service p {
     #main .flex p {
         width: 90%;
     }
-
 }
 
 @media (max-width:430px) {
-
     #main .banner img {
         height: 67px;
     }
 
     #main .slider img {
-        object-position: 46%;
-        width: 91%;
         height: 90vh;
     }
-
-    /* #main #carousel3 {
-        right: 8vw;
-        top: 8vh;
-    } */
 
     #main .banner::before {
         background: url('../img/bannerM/deviceM.png') no-repeat center bottom;
@@ -2095,15 +2084,6 @@ body.zh #service p {
 }
 
 @media(max-width:400px) {
-    /* #main #carousel3 {
-        top: 9vh;
-    } */
-
-    /* #main .slider img {
-        width: 91%;
-        height: 87vh;
-    } */
-
     #main .flex,
     #product .flex {
         width: 100%;
@@ -2123,49 +2103,12 @@ body.zh #service p {
 }
 
 @media(max-width:375px) {
-    /* #main #carousel3 {
-        top: 10vh;
-        right: 6vw;
-    } */
-
-    /* #main .slider img {
-        height: 84vh;
-    } */
-
     .rmn {
         bottom: 27%;
     }
 }
 
-@media (max-width:370px) {
-    /* #main #carousel3 {
-        top: 16vh;
-    } */
-
-    /* #main .slider img {
-        height: 80vh;
-    } */
-}
-
-@media (max-width:365px) {
-    /* #main #carousel3 {
-        top: 18vh;
-    } */
-}
-@media (max-width:360px) {
-    /* #main #carousel3 {
-        top: 13vh;
-    } */
-}
 @media(max-width:350px) {
-    /* #main #carousel3 {
-        top: 21vh;
-    } */
-
-    /* #main .slider img {
-        height: 75vh;
-    } */
-
     #main .flex {
         width: 90%;
     }
@@ -2173,33 +2116,4 @@ body.zh #service p {
     .rmn {
         bottom: 25%;
     }
-}
-
-@media(max-width:345px) {
-    /* #main #carousel3 {
-        top: 22vh;
-    } */
-}
-
-@media(max-width:335px) {
-    /* #main #carousel3 {
-        top: 24vh;
-    } */
-}
-
-@media(max-width:330px) {
-    /* #main .slider img {
-        height: 68vh;
-    } */
-
-    /* #main #carousel3 {
-        top: 27vh;
-    } */
-}
-
-@media(max-width:330px) {
-
-    /* #main #carousel3 {
-        top: 28vh;
-    } */
 }
