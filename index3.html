@@ -458,6 +458,7 @@
                     let deviceH = $H*0.9;
                     $('#main #carousel3').height(deviceH);
                     $('#main #carousel3').width(deviceW);
+                    $('#main .slider img').height(deviceH);
                 }
             });
 
@@ -553,7 +554,6 @@
                     }, 800);
                 }
             });
-
             $('a[href="#product"]').click(function () {
                 if ($W > 750) {
                     $('html,body').animate({
@@ -606,7 +606,9 @@
                     let deviceH = $H*0.9;
                     $('#main #carousel3').height(deviceH);
                     $('#main #carousel3').width(deviceW);
+                    $('#main .slider img').height(deviceH);
             }
+            alert(`W:${$W},H:${$H},dH:${deviceH}`)
 
             let oneH = $('#product .flex.one').height();
             $('.imgWp img').height(oneH);
