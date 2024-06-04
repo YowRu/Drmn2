@@ -457,9 +457,10 @@
                     let deviceW = $W*0.87;
                     let deviceH = $H*0.9;
                     let cH=$('#main #carousel3').height();
+                    let cW=$('#main #carousel3').width();
                     $('#main .slider img').width(deviceW*0.89);
                     $('#main .slider img').height(deviceH*0.89);
-                    $('#main #carousel3').css({'top':cH-deviceH});
+                    $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
                   
                     alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH}`);
                 }
@@ -611,7 +612,7 @@
                 $('#main .slider img').width(deviceW*0.89);
                 $('#main .slider img').height(deviceH*0.89);
                 let cH=$('#main #carousel3').height();
-                $('#main #carousel3').css({'top':cH-deviceH});
+                $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
                 alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH}`);
             }
 
