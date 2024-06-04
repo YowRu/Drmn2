@@ -462,7 +462,8 @@
                     $('#main .slider img').height(deviceH*0.89);
                     $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
                   
-                    alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH}`);
+                    let n=(cH-deviceH)/$H*100;
+                alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH},top:${n}`);
                 }
             });
 
@@ -613,7 +614,8 @@
                 $('#main .slider img').height(deviceH*0.89);
                 let cH=$('#main #carousel3').height();
                 $('#main #carousel3').css({'top':(cH-deviceH)/$H*100+'vh'});
-                alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH}`);
+                let n=(cH-deviceH)/$H*100;
+                alert(`deviceW:${deviceW}, H:${deviceH}, cH:${cH},top:${n}`);
             }
 
             let oneH = $('#product .flex.one').height();
