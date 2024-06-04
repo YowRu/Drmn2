@@ -464,7 +464,7 @@ header.scroll .top a.login {
 #main #carousel3 {
     display: none;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     z-index: 1;
 }
@@ -1815,6 +1815,7 @@ body.zh #service p {
     #main .slider img {
         object-fit: contain;
     }
+
     #main #carousel3 {
         width: 85vw;
         right: 4.7vw;
@@ -1930,6 +1931,7 @@ body.zh #service p {
 }
 
 @media(max-width:500px) {
+
     #main p.description,
     #main .flex span {
         font-size: .85rem;
@@ -1967,6 +1969,7 @@ body.zh #service p {
 }
 
 @media(max-width:480px) {
+
     #main p.title.white,
     #main p.title.bold,
     #main p.small.title {
@@ -2006,9 +2009,9 @@ body.zh #service p {
         height: 67px;
     }
 
-    #main .slider img {
+    /* #main .slider img {
         height: 90vh;
-    }
+    } */
 
     #main .banner::before {
         background: url('../img/bannerM/deviceM.png') no-repeat center bottom;
@@ -2084,6 +2087,7 @@ body.zh #service p {
 }
 
 @media(max-width:400px) {
+
     #main .flex,
     #product .flex {
         width: 100%;
