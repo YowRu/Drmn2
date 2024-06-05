@@ -61,12 +61,15 @@
     <div id="main">
         <div class="bannerText">
             <p class="title white" lang="bannerText">LET’S IMPROVE ADVERTISING EFFECTIVENESS</p>
-            <div>
+            <div class="bannerDescription">
                 <p class="en white" lang="description">We leverage the power of location, creative, and smart audience
                     data to drive meaningful connections between brands and audiences in the real world with out of home
                     advertising.</p>
                 <a href="#case" lang="more">learn more</a>
             </div>
+        </div>
+        <div class="bannerBG" data-aos="fade-in" data-aos-easing='ease-in' data-aos-duration="2000"
+            data-aos-delay='3000'>
         </div>
         <div class="banner" id="banner"></div>
         <div class="slider owl-carousel owl-theme" id="carousel1">
@@ -460,6 +463,10 @@
                     let deviceH = $H * 0.9;
                     $('#main #carousel3').css({ 'height': deviceH, 'width': deviceW, 'right': ($W - deviceW) / 2 });
                     $('#main .slider img').css({ 'height': deviceH, 'object-position': 'bottom' });
+
+                    setTimeout(function () {
+                        $('.bannerText').css({ 'opacity': 1 });
+                    }, 4000); // 使用setTimeout，延遲3000毫秒（即3秒）後執行動畫
                 }
             });
 
@@ -480,6 +487,10 @@
                     } else {
                         header.removeClass('scroll');
                     }
+                }
+                //bannerBG hide
+                if($(this).scrollTop() > $H){
+                    $('.bannerText, .bannerBG').css({ 'opacity':0 });
                 }
             });
 
@@ -506,7 +517,6 @@
                     'marginLeft': 0
                 }, 800);
                 $('body').css('overflow-y', 'auto');
-
                 $('header .bg').hide();
             });
 
@@ -609,9 +619,13 @@
                 $('#main .slider img').css({ 'height': deviceH, 'width': deviceW, 'object-position': 'bottom' });
                 let imgW = $('#main .slider img').width();
                 let imgH = $('#main .slider img').height();
-                // alert(`W:${$W},H:${$H},top:${$H - deviceH},imgW:${imgW},imgH:${imgH}`);
-                if ($W < 395 ) {
-                    $('#main #carousel3').css({'top':$H - deviceH+30});
+
+                setTimeout(function () {
+                    $('.bannerText').css({ 'opacity': 1 });
+                }, 4000); 
+
+                if ($W < 395) {
+                    $('#main #carousel3').css({ 'top': $H - deviceH + 30 });
                     // alert(`top:${$H - deviceH+30}`);
                 }
             }

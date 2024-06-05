@@ -137,7 +137,7 @@ header {
     top: 0;
     left: 0;
     padding: 16px 0;
-    z-index: 3;
+    z-index: 4;
     transition: all 1s;
     font-family: "Inter", sans-serif;
 }
@@ -217,7 +217,7 @@ header .menu {
     position: fixed;
     top: 0;
     left: -320px;
-    z-index: 3;
+    z-index: 4;
     padding: 10px 0;
     background-color: #fff;
     height: 100vh;
@@ -503,6 +503,17 @@ header.scroll .top a.login {
     position: relative;
 }
 
+.bannerBG {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000c6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: none;
+}
+
 .zh #main .bannerText p.en {
     height: auto;
 }
@@ -595,6 +606,10 @@ header.scroll .top a.login {
     height: 100vh;
     object-fit: cover;
     object-position: top;
+}
+
+.owl-carousel.owl-drag .owl-item .item {
+    position: relative;
 }
 
 #main .slider img.six {
@@ -1811,23 +1826,33 @@ body.zh #service p {
     #main .banner::before {
         right: 6.5vw;
     }
+ 
+    #main .bannerText p.title.white {
+        margin: 0 auto;
+        font-size: 3rem;
+        line-height: 4.4rem;
+    }
 
     #main .slider img {
         object-fit: contain;
     }
 
-    #main #carousel3 {
-        width: 85vw;
-        right: 4.7vw;
+    #main .bannerDescription {
+        width: 100vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    #main .bannerText {
-        display: none;
+    #main .bannerText a {
+        margin-left: 0;
     }
 
     #main .bannerText p.en {
-        width: 450px;
-        font-size: .95rem;
+        width: 80vw;
+        font-size: 1rem;
         margin-bottom: 44px;
     }
 
@@ -1842,7 +1867,13 @@ body.zh #service p {
     }
 
     #main .bannerText {
-        left: 10%;
+        left: 0;
+        width: 100vw;
+        height: 85vh;
+        z-index: 3;
+        margin-top: 15vh;
+        opacity: 0;
+        transition: all 2s;
     }
 
     #main .bannerText p {
@@ -2009,10 +2040,6 @@ body.zh #service p {
         height: 67px;
     }
 
-    /* #main .slider img {
-        height: 90vh;
-    } */
-
     #main .banner::before {
         background: url('../img/bannerM/deviceM.png') no-repeat center bottom;
         background: url('../img/bannerM/device1.png') no-repeat center bottom;
@@ -2040,7 +2067,8 @@ body.zh #service p {
         width: 50%;
     }
 
-    #main .title, #main p.small.title,
+    #main .title,
+    #main p.small.title,
     #main p.title.bold {
         font-size: 1.7rem;
     }
@@ -2104,6 +2132,7 @@ body.zh #service p {
     #main .banner {
         min-height: 100vh;
     }
+
 }
 
 @media(max-width:375px) {
