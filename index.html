@@ -489,7 +489,7 @@
                     }
                 }
                 //bannerBG hide
-                if($(this).scrollTop() > $H){
+                if ($W < 551 && $(this).scrollTop() > $H){
                     $('.bannerText, .bannerBG').css({ 'opacity':0 });
                 }
             });

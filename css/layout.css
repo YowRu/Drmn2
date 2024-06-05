@@ -511,7 +511,7 @@ header.scroll .top a.login {
     top: 0;
     left: 0;
     z-index: 2;
-    animation: none;
+    display: none;
 }
 
 .zh #main .bannerText p.en {
@@ -1826,11 +1826,15 @@ body.zh #service p {
     #main .banner::before {
         right: 6.5vw;
     }
- 
+
     #main .bannerText p.title.white {
         margin: 0 auto;
         font-size: 3rem;
         line-height: 4.4rem;
+    }
+
+    .bannerBG {
+        display: block;
     }
 
     #main .slider img {
