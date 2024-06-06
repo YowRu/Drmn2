@@ -632,27 +632,37 @@ header.scroll .top a.login {
     position: relative;
 }
 
-.row1WP {
-
-    margin-top: 110px;
-}
-
 #about .row0 p,
 #about .row1 p {
     line-height: 2.4rem;
-    width: 65%;
+    width: 70%;
+    position: relative;
+}
+
+.row1WP {
+    width: 100vw;
     position: relative;
 }
 
 #main .row1 {
-    max-width: 1500px;
     width: 90%;
-    margin-top: 60px;
-    position: relative;
+    position: absolute;
+    top: 20vh;
+    left: 5%;
+    z-index: 1;
 }
 
-#about .row1 p {
-    margin-bottom: 110px;
+#main .row1 p {
+    color: #fff;
+}
+
+#main .row1 .description {
+    line-height: 3rem;
+}
+
+#main .missionBG {
+    object-fit: cover;
+    width: 100vw;
 }
 
 #main .row2 .wp {
@@ -682,6 +692,7 @@ header.scroll .top a.login {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #main .row1 .flex p {
@@ -694,7 +705,7 @@ header.scroll .top a.login {
     height: auto;
     padding-left: 0;
     font-weight: 300;
-    color: #666;
+    color: #fff;
 }
 
 #main .flex span {
@@ -703,28 +714,34 @@ header.scroll .top a.login {
     height: 128px;
 }
 
+#main .flex span.advantagesContent {
+    width: 68%;
+    margin: 0 auto;
+}
+
 #main .flex p img {
     width: 80px;
+    margin-bottom: 20px;
 }
 
 #main p.small.title {
     font-weight: 300;
-    margin-bottom: 60px;
-    font-size: 2rem;
 }
 
 /*svg*/
 
-.circle {
-    width: 92px;
-    height: 92px;
+#main .flex span.circle {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin: 33px;
+    margin: 0;
     border: 3px solid #ffffff50;
+    position: absolute;
+    top: -10px;
 }
 
 
-.circle svg {
+#main .flex span.circle svg {
     fill: none;
     stroke-width: 3px;
     margin-top: -4px;
