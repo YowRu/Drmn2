@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +18,6 @@
     <link rel="stylesheet" href="css/border1.css" type="text/css">
     <title>Digital RMN</title>
 </head>
-
 <body>
     <div id="headerCover">
         <div id="quote" lang="welcome">Welcome</div>
@@ -111,32 +109,32 @@
                     </p>
                     <div class="imgAnimation">
                         <div class="top">
+                            <img src="img/mission/$.png" alt="" class="bigM">
                             <img src="img/mission/shop.png" alt="" class="shop" data-aos="fade-down"
                                 data-aos-easing='ease-in' data-aos-duration="500">
                         </div>
                         <div class="middle">
                             <img src="img/mission/deviceL.png" alt="" class="dL" data-aos="fade-down"
-                                data-aos-easing='ease-in' data-aos-duration="700" data-aos-delay='800'>
+                                data-aos-easing='ease-in' data-aos-duration="500" data-aos-delay='800'>
                             <img src="img/mission/deviceR.png" alt="" class="dR" data-aos="fade-down"
-                                data-aos-easing='ease-in' data-aos-duration="700" data-aos-delay='800'>
+                                data-aos-easing='ease-in' data-aos-duration="500" data-aos-delay='800'>
                         </div>
                         <div class="bottom">
                             <img src="img/mission/people1v.png" alt="" class="people" data-aos="fade-in"
                                 data-aos-easing='ease-in' data-aos-duration="500" data-aos-delay='1500'>
                             <img src="img/mission/people2v.png" alt="" class="people people2" data-aos="fade-in"
                                 data-aos-easing='ease-in' data-aos-duration="500" data-aos-delay='2000'>
-                            <img src="img/mission/$.png" alt="" class="bigM">
                         </div>
                     </div>
                     <p lang="advantages" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="500"
                         data-aos-delay='800' class="small title">RMN’s Advantages</p>
                     <div class="flex" id="svgAnimation">
                         <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='1000' class="block">
-                            <span class="circle six">
+                            <!-- <span class="circle six">
                                 <svg height="100px" viewBox="0 0 100 100" width="100px">
                                     <circle cx="50" cy="50" id="circle" r="47"></circle>
                                 </svg>
-                            </span>
+                            </span> -->
                             <img src="img/mission1.png" alt="">
                             <span class="title" lang="aboutNum1">First party database</span>
                             <span lang="aboutNumDescription1">First-hand information collected by companies from
@@ -146,50 +144,30 @@
                             <img src="img/mission2.png" alt="">
                             <span class="title" lang="aboutNum2">Closed-loop attribution system</span>
                             <span lang="aboutNumDescription2">Effectively clarify the relationship between advertising
-                                spend
-                                and sales.</span>
+                                spend and sales.</span>
                         </p>
                         <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay='1000' class="block big">
                             <img src="img/mission3.png" alt="">
                             <span class="title" lang="aboutNum3">Context-locked advertising</span>
                             <span lang="aboutNumDescription3">The advertising content is related to the product and has
-                                a
-                                strong shopping
-                                orientation.</span>
+                                a strong shopping orientation.</span>
                         </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='800' class="block">
                             <img src="img/mission4.png" alt="">
                             <span class="title" lang="aboutNum4">Large-scale audience</span>
                             <span lang="aboutNumDescription4">Ensure a large number of consumers, enough to reach the
-                                target
-                                customers.</span>
+                                target customers.</span>
                         </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='800' class="block">
                             <img src="img/mission5.png" alt="">
                             <span class="title" lang="aboutNum5">Marketing funnel</span>
-                            <span lang="aboutNumDescription5">Meet current search needs and effectively guide to final
-                                conversion.</span>
+                            <span lang="aboutNumDescription5">Meet current search needs and effectively guide to final conversion.</span>
                         </p>
                         <p class="block"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="row row2">
-                <div class="circle-wrap">
-                    <div class="mask full">
-                        <div class="fill"></div>
-                      </div>
-                    
-                    <div class="mask half">
-                      <div class="fill"></div>
-                    </div>
-                  
-                    <div class="inside-circle">
-                      68.9 point
-                    </div>
-                  </div>
-            </div> -->
         <div id="product">
             <div class="row row2">
                 <div class="wp">
@@ -541,16 +519,21 @@
             });
             /*imgAnimation*/
             $(window).scroll(function () {
-                let imgAnimationTop = $('.imgAnimation').offset().top - $H * 0.4;
+                let imgAnimationTop = $('.imgAnimation').offset().top - $H * 0.2;
+                let AnimationMobile = $('.imgAnimation').offset().top - $H * 0.5;
                 console.log($(this).scrollTop(), imgAnimationTop);
                 // 判断是否滚动到了.imgAnimation元素
-                if ($(this).scrollTop() >= imgAnimationTop) {
+                if ($(this).scrollTop() > imgAnimationTop && $W >550) {
                     setTimeout(function () {
-                        $('.bigM').css({ 'top': '-42vh', 'opacity': '1' });
+                        $('.bigM').css({ 'top': '10vh', 'opacity': '1' });
                     }, 2000);
                     console.log('bigM start.');
+                } else if($(this).scrollTop() > AnimationMobile && 551> $W){
+                    setTimeout(function () {
+                        $('.bigM').css({ 'top': '8vh', 'opacity': '1' });
+                    }, 2000);
                 } else {
-                    $('.bigM').css({ 'top': '-120vh', 'opacity': '0' });
+                    $('.bigM').css({ 'top': '-20vh', 'opacity': '0' });
                     console.log('bigM stop.');
                 }
             });

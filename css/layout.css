@@ -720,9 +720,9 @@ header.scroll .top a.login {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../img/mission/missionBG1.png') no-repeat center;
+    background: url('../img/mission/missionBg.png') no-repeat -2vw center;
     background-size: contain;
-    width: 100vw;
+    width: 106vw;
     height: 113vh;
 }
 
@@ -746,10 +746,10 @@ header.scroll .top a.login {
     align-items: center;
 }
 
-#main .imgAnimation .bottom img.bigM {
+#main .imgAnimation .top img.bigM {
     height: 18vh;
     position: absolute;
-    top: -120vh;
+    top: -20vh;
     left: 36vw;
     opacity: 0;
     z-index: 1;
@@ -765,7 +765,7 @@ header.scroll .top a.login {
 
 #main img.shop {
     width: auto;
-    height: 80vh;
+    height: 75vh;
     opacity: 0.95;
 }
 
@@ -1354,10 +1354,10 @@ body.zh #service p {
         width: 100%;
     }
 
-    #main .imgAnimation .bottom img.bigM {
-        width: 6%;
+    #main .imgAnimation .top img.bigM {
+        width: 10%;
         height: auto;
-        left: 44%;
+        left: 41%;
     }
 }
 
@@ -1373,16 +1373,6 @@ body.zh #service p {
 
     #service {
         height: 273vh;
-    }
-}
-
-@media (max-width:1300px) {
-    #main .imgAnimation .middle {
-        top: 70vh;
-    }
-
-    #main .imgAnimation .bottom {
-        top: 83vh;
     }
 }
 
@@ -1433,9 +1423,6 @@ body.zh #service p {
         left: 5vw;
     }
 
-    #main .imgAnimation .bottom img.bigM {
-        left: 40vw;
-    }
 }
 
 @media (max-width:1150px) {
@@ -1447,18 +1434,23 @@ body.zh #service p {
         font-size: 1.4rem;
     }
 
-    #main .imgAnimation .bottom {
-        top: 87vh;
-    }
 }
 
 @media (max-width:1100px) {
+    #main p.small.title {
+        margin-top: 100px;
+    }
+
     #main .imgAnimation .top {
         margin-top: -53vh;
     }
 
+    #main .imgAnimation .middle {
+        top: 64vh;
+    }
+
     #main .imgAnimation .bottom {
-        top: 85vh;
+        top: 72vh;
     }
 }
 
@@ -1500,8 +1492,11 @@ body.zh #service p {
 }
 
 @media (max-width:1000px) {
-    #main .imgAnimation .middle {
-        top: 73vh;
+    #main p.small.title {
+        margin-top: -23vh;
+    }
+    #main .imgAnimation .bottom {
+        top: 78vh;
     }
 
     #about .row0 p,
@@ -1556,6 +1551,12 @@ body.zh #service p {
     }
 }
 
+@media (max-width:950px) {
+    #main .imgAnimation .top {
+        margin-top: -63vh;
+    }
+}
+
 @media(max-width:900px) {
 
     #about .row0 p,
@@ -1579,7 +1580,8 @@ body.zh #service p {
         height: 70vh;
     }
 
-    #main img.dL, #main img.dR {
+    #main img.dL,
+    #main img.dR {
         height: 29vh;
     }
 
@@ -1619,10 +1621,6 @@ body.zh #service p {
         height: 213vh;
     }
 
-    #main .imgAnimation .top {
-        margin-top: -42vh;
-    }
-
     #main .bannerText {
         left: 5%;
     }
@@ -1646,12 +1644,28 @@ body.zh #service p {
 }
 
 @media(max-width:800px) {
+    #main p.small.title {
+        margin-top: -27vh;
+    }
+    #main img.people {
+        height: auto;
+        width: 115%;
+        position: relative;
+        left: -7.5%;
+    }
+
+    #main img.people2 {
+        position: absolute;
+        left: -7.5%;
+    }
+
     #main img.shop {
         height: 60vh;
         top: 77vh;
     }
 
-    #main img.dL, #main img.dR {
+    #main img.dL,
+    #main img.dR {
         height: 25vh;
     }
 
@@ -1748,6 +1762,21 @@ body.zh #service p {
 }
 
 @media(max-width:750px) {
+    #main p.small.title {
+        margin-top: -30vh;
+    }
+    #main img.people {
+        height: auto;
+        width: 125%;
+        position: relative;
+        left: -12.5%;
+    }
+
+    #main img.people2 {
+        position: absolute;
+        left: -12.5%;
+    }
+
     .layer {
         transform: rotate3d(0, -1, 0, 184deg) scale(2.5, 1.5);
     }
@@ -1782,6 +1811,12 @@ body.zh #service p {
 }
 
 @media(max-width:700px) {
+
+    #main img.dL,
+    #main img.dR {
+        height: 21vh;
+    }
+
     #service {
         height: 199vh;
         background: url(../img/cmsBG2.png) no-repeat center 37px;
@@ -1888,6 +1923,9 @@ body.zh #service p {
 }
 
 @media (max-width:650px) {
+    #main p.small.title {
+        margin-top: -35vh;
+    }
     #main .bannerText p.title.white {
         font-size: 2.4rem;
     }
@@ -1940,6 +1978,10 @@ body.zh #service p {
 }
 
 @media(max-width:600px) {
+    #main img.shop {
+        height: 55vh;
+    }
+
     header .left a {
         width: 200px;
     }
@@ -2002,6 +2044,29 @@ body.zh #service p {
 }
 
 @media(max-width:555px) {
+    #main p.description {
+        margin-bottom: 90px;
+    }
+
+    #main .imgAnimation .bottom {
+        top: 70vh;
+    }
+
+    #main img.dL,
+    #main img.dR {
+        height: 17vh;
+    }
+    #main img.people {
+        height: auto;
+        width: 134%;
+        position: relative;
+        left: -17%;
+    }
+
+    #main img.people2 {
+        position: absolute;
+        left: -17%;
+    }
     .rmn {
         bottom: 35%;
     }
@@ -2037,6 +2102,9 @@ body.zh #service p {
 }
 
 @media(max-width:550px) {
+    #main img.shop {
+        height: 47vh;
+    }
     #main .banner::before {
         right: 6.5vw;
     }
@@ -2180,6 +2248,20 @@ body.zh #service p {
 }
 
 @media(max-width:500px) {
+    #main img.people {
+        height: auto;
+        width: 142%;
+        position: relative;
+        left: -21%;
+    }
+
+    #main img.people2 {
+        position: absolute;
+        left: -21%;
+    }
+    #main p.small.title {
+        margin-top: -40vh;
+    }
     #main .bannerText p.title.white {
         width: 80vw;
     }
