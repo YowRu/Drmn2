@@ -446,7 +446,7 @@ header.scroll .top a.login {
     position: absolute;
     top: -3vh;
     left: 39vw;
-    width: 24vw;
+    width: 22vw;
 }
 
 /*goTop*/
@@ -645,14 +645,17 @@ header.scroll .top a.login {
 }
 
 #main .row1 {
-    max-width: 1500px;
-    width: 90%;
     margin-top: 60px;
     position: relative;
 }
 
 #about .row1 p {
     margin-bottom: 110px;
+}
+
+#about .row1 p {
+    max-width: 1500px;
+    width: 90%;
 }
 
 #main .row2 .wp {
@@ -688,7 +691,6 @@ header.scroll .top a.login {
     margin: 1%;
 }
 
-
 #main .flex span.title {
     font-size: 1.25rem;
     height: auto;
@@ -711,6 +713,79 @@ header.scroll .top a.login {
     font-weight: 300;
     margin-bottom: 60px;
     font-size: 2rem;
+}
+
+#main .imgAnimation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/mission/missionBG1.png') no-repeat center;
+    background-size: contain;
+    width: 100vw;
+    height: 113vh;
+}
+
+#main .imgAnimation .top,
+#main .imgAnimation .middle,
+#main .imgAnimation .bottom {
+    position: relative;
+}
+
+#main .imgAnimation .top {
+    margin-top: -50vh;
+}
+
+#main .imgAnimation .middle {
+    position: absolute;
+    width: 60vw;
+    top: 60vh;
+    left: 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main .imgAnimation .bottom img.bigM {
+    height: 18vh;
+    position: absolute;
+    top: -120vh;
+    left: 36vw;
+    opacity: 0;
+    z-index: 1;
+    transition: all 1.5s;
+}
+
+#main .imgAnimation .bottom {
+    position: absolute;
+    top: 70vh;
+    width: 80vw;
+    left: 10vw;
+}
+
+#main img.shop {
+    width: auto;
+    height: 80vh;
+    opacity: 0.95;
+}
+
+#main img.people {
+    height: 45vh;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#main img.people2 {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+#main img.dL,
+#main img.dR {
+    width: 8%;
 }
 
 /*svg*/
@@ -1243,6 +1318,10 @@ body.zh #service p {
     #service {
         height: 333vh;
     }
+
+    #main .imgAnimation .top {
+        margin-top: -40vh;
+    }
 }
 
 @media(max-width:1500px) {
@@ -1260,6 +1339,28 @@ body.zh #service p {
     }
 }
 
+@media(max-width:1450px) {
+    #main .imgAnimation .bottom {
+        top: 80vh;
+    }
+
+    #main .imgAnimation .middle {
+        width: 85vw;
+        left: 7.5vw;
+    }
+
+    #main img.people {
+        height: auto;
+        width: 100%;
+    }
+
+    #main .imgAnimation .bottom img.bigM {
+        width: 6%;
+        height: auto;
+        left: 44%;
+    }
+}
+
 @media(max-width:1400px) {
 
     #main .flex {
@@ -1272,6 +1373,16 @@ body.zh #service p {
 
     #service {
         height: 273vh;
+    }
+}
+
+@media (max-width:1300px) {
+    #main .imgAnimation .middle {
+        top: 70vh;
+    }
+
+    #main .imgAnimation .bottom {
+        top: 83vh;
     }
 }
 
@@ -1312,6 +1423,19 @@ body.zh #service p {
         height: 244vh;
     }
 
+    #main .imgAnimation .middle {
+        width: 90vw;
+        left: 5vw;
+    }
+
+    #main .imgAnimation .bottom {
+        width: 90vw;
+        left: 5vw;
+    }
+
+    #main .imgAnimation .bottom img.bigM {
+        left: 40vw;
+    }
 }
 
 @media (max-width:1150px) {
@@ -1323,6 +1447,19 @@ body.zh #service p {
         font-size: 1.4rem;
     }
 
+    #main .imgAnimation .bottom {
+        top: 87vh;
+    }
+}
+
+@media (max-width:1100px) {
+    #main .imgAnimation .top {
+        margin-top: -53vh;
+    }
+
+    #main .imgAnimation .bottom {
+        top: 85vh;
+    }
 }
 
 @media (max-width:1080px) {
@@ -1363,6 +1500,9 @@ body.zh #service p {
 }
 
 @media (max-width:1000px) {
+    #main .imgAnimation .middle {
+        top: 73vh;
+    }
 
     #about .row0 p,
     #about .row1 p {
@@ -1435,6 +1575,14 @@ body.zh #service p {
         width: 55%;
     }
 
+    #main img.shop {
+        height: 70vh;
+    }
+
+    #main img.dL, #main img.dR {
+        height: 29vh;
+    }
+
     header .left {
         width: auto;
         display: flex;
@@ -1471,6 +1619,10 @@ body.zh #service p {
         height: 213vh;
     }
 
+    #main .imgAnimation .top {
+        margin-top: -42vh;
+    }
+
     #main .bannerText {
         left: 5%;
     }
@@ -1494,6 +1646,14 @@ body.zh #service p {
 }
 
 @media(max-width:800px) {
+    #main img.shop {
+        height: 60vh;
+        top: 77vh;
+    }
+
+    #main img.dL, #main img.dR {
+        height: 25vh;
+    }
 
     #main .bannerText p.title.white {
         font-size: 2.6rem;
