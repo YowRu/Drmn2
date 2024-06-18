@@ -747,10 +747,10 @@ header.scroll .top a.login {
 }
 
 #main .imgAnimation .top img.bigM {
-    height: 18vh;
+   width: 10%;
     position: absolute;
     top: -20vh;
-    left: 36vw;
+    left: 45%;
     opacity: 0;
     z-index: 1;
     transition: all 1.5s;
@@ -770,9 +770,9 @@ header.scroll .top a.login {
 }
 
 #main img.people {
-    height: 45vh;
+    width: 80%;
     position: relative;
-    left: 0;
+    left: 10%;
     top: 0;
 }
 
@@ -780,7 +780,7 @@ header.scroll .top a.login {
     position: absolute;
     z-index: 1;
     top: 0;
-    left: 0;
+    left: 10%;
 }
 
 #main img.dL,
@@ -1347,11 +1347,6 @@ body.zh #service p {
     #main .imgAnimation .middle {
         width: 85vw;
         left: 7.5vw;
-    }
-
-    #main img.people {
-        height: auto;
-        width: 100%;
     }
 
     #main .imgAnimation .top img.bigM {
