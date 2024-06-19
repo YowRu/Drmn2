@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="css/border1.css" type="text/css">
     <title>Digital RMN</title>
 </head>
+
 <body>
     <div id="headerCover">
         <div id="quote" lang="welcome">Welcome</div>
@@ -67,7 +69,7 @@
             </div>
         </div>
         <div class="bannerBG" data-aos="fade-in" data-aos-easing='ease-in' data-aos-duration="2000"
-            data-aos-delay='3000'>
+            data-aos-delay='2000'>
         </div>
         <div class="banner" id="banner"></div>
         <div class="slider owl-carousel owl-theme" id="carousel1">
@@ -105,7 +107,10 @@
                     data-aos-delay='800' lang="about">OUR MISSION</p>
                 <div class="row row1">
                     <p class="description" data-aos="fade-up" data-aos-easing='ease-in' data-aos-duration="1000"
-                        data-aos-delay='500' lang="aboutDescription">Taiwan's first RMN platform focusing on physical channels promotes information to consumers in specific areas through unique media red dragon pillars. Whether it is event announcements, instant messages or advertising materials, exposure can be uploaded through the CMS system.
+                        data-aos-delay='500' lang="aboutDescription">Taiwan's first RMN platform focusing on physical
+                        channels promotes information to consumers in specific areas through unique media red dragon
+                        pillars. Whether it is event announcements, instant messages or advertising materials, exposure
+                        can be uploaded through the CMS system.
                     </p>
                     <div class="imgAnimation">
                         <div class="top">
@@ -161,7 +166,8 @@
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay='800' class="block">
                             <img src="img/mission5.png" alt="">
                             <span class="title" lang="aboutNum5">Marketing funnel</span>
-                            <span lang="aboutNumDescription5">Meet current search needs and effectively guide to final conversion.</span>
+                            <span lang="aboutNumDescription5">Meet current search needs and effectively guide to final
+                                conversion.</span>
                         </p>
                         <p class="block"></p>
                     </div>
@@ -473,16 +479,13 @@
                     let deviceH = $H * 0.9;
                     $('#main #carousel3').css({ 'height': deviceH, 'width': deviceW, 'right': ($W - deviceW) / 2 });
                     $('#main .slider img').css({ 'height': deviceH, 'object-position': 'bottom' });
-
-                    setTimeout(function () {
-                        $('.bannerText').css({ 'opacity': 1 });
-                    }, 4000); // 使用setTimeout，延遲3000毫秒（即3秒）後執行動畫
                 }
             });
 
             //header
             let header = $('header');
             let scrollThreshold = 80;
+            let isBannerHidden = false; // 新增一個標誌位來追蹤 bannerText 是否已經被隱藏
 
             $(document).scroll(function () {
                 if ($W < 450) {
@@ -499,36 +502,50 @@
                     }
                 }
                 //bannerBG hide
-                if ($W < 551 && $(this).scrollTop() > $H) {
-                    $('.bannerText, .bannerBG').css({ 'opacity': 0 });
-                }
+                // if ($W < 551 && $(this).scrollTop() > $H && !isBannerHidden) {
+                //     $('#main .bannerText, .bannerBG').css({ 'opacity': 0 });
+                //     isBannerHidden = true; // 設置標誌位為真，表示 bannerText 已經被隱藏
+                // }
+
             });
+
+            function bannerTextShow() {
+                // 監聽滾動事件
+                $(window).scroll(function () {
+                    // 獲取當前滾動的高度
+                    let scrollPosition = $(this).scrollTop();
+
+                    // 如果窗口寬度小於 551px且滾動高度大於窗口高度，則隱藏 bannerText 和 bannerBG
+                    if ($W < 551 && scrollPosition > $H && !isBannerHidden) {
+                        $('#main .bannerText,.bannerBG').css({ 'opacity': 0 });
+                        isBannerHidden = true; // 設置標誌位為真，表示 bannerText 已經被隱藏
+                    }
+                });
+            }
 
             /*svgAnimation*/
             $(window).scroll(function () {
                 let svgAnimationTop = $('#svgAnimation').offset().top - $H * 0.7;
-                console.log($(this).scrollTop(), svgAnimationTop);
+
                 // 判断是否滚动到了#svgAnimation元素
                 if ($(this).scrollTop() >= svgAnimationTop) {
                     $('.six').css({ 'animation': 'six 2s linear' });
-                    console.log('start.');
                 } else {
                     $('.six').css({ 'animation': 'none' });
-                    console.log('stop.');
                 }
             });
             /*imgAnimation*/
             $(window).scroll(function () {
                 let imgAnimationTop = $('.imgAnimation').offset().top - $H * 0.2;
                 let AnimationMobile = $('.imgAnimation').offset().top - $H * 0.5;
-                console.log($(this).scrollTop(), imgAnimationTop);
+
                 // 判断是否滚动到了.imgAnimation元素
-                if ($(this).scrollTop() > imgAnimationTop && $W >550) {
+                if ($(this).scrollTop() > imgAnimationTop && $W > 550) {
                     setTimeout(function () {
                         $('.bigM').css({ 'top': '10vh', 'opacity': '1' });
                     }, 2000);
                     console.log('bigM start.');
-                } else if($(this).scrollTop() > AnimationMobile && 551> $W){
+                } else if ($(this).scrollTop() > AnimationMobile && 551 > $W) {
                     setTimeout(function () {
                         $('.bigM').css({ 'top': '8vh', 'opacity': '1' });
                     }, 2000);
@@ -652,7 +669,6 @@
                 }
             });
 
-
             $('.banner').height($H);
             if ($W < 551) {
                 let deviceW = $W * 0.87;
@@ -663,18 +679,18 @@
                 let imgH = $('#main .slider img').height();
 
                 setTimeout(function () {
-                    $('.bannerText').css({ 'opacity': 1 });
-                }, 4000);
+                    $('#main .bannerText').css({ 'opacity': 1 });
+                }, 3500); // 使用setTimeout，延遲3000毫秒（即3秒）後執行動畫
+                bannerTextShow();
 
                 if ($W < 395) {
                     $('#main #carousel3').css({ 'top': $H - deviceH + 30 });
                 }
             }
 
-            // let imgH = $('.layer').height();
-            // $('#main .row1 .description').css({ 'margin-top': imgH });
-            // $('#main .row1WP p.small.title').css('margin-top', imgH * 0.3)
-            // console.log(imgH);
+            if ($W < 551 && $(this).scrollTop() > $H) {
+                $('#main .bannerText, .bannerBG').css({ 'opacity': 0 });
+            }
 
             let oneH = $('#product .flex.one').height();
             $('.imgWp img').height(oneH);
