@@ -1190,11 +1190,6 @@ body.zh #service p {
     display: none;
 }
 
-#contact img {
-    width: 500px;
-    height: 500px;
-}
-
 #contact {
     position: relative;
     background-color: #F9F9F9;
@@ -1245,8 +1240,8 @@ body.zh #service p {
 }
 
 #contact img {
-    width: 22px;
-    height: 22px;
+    width: 75%;    
+    object-fit: cover;
 }
 
 #contact .textFlex {
@@ -1286,7 +1281,9 @@ body.zh #service p {
     color: #666;
     font-size: 1rem;
 }
-
+#contact .border.nomargin .thin{
+    text-align: right;
+}
 #contact .border span:nth-child(1) {
     margin-right: 10px;
     display: inline-block;

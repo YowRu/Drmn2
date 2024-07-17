@@ -50,5 +50,7 @@
             "contact": "Contact",
             "contactDeacription": "Feel free to contact us any time, we will get back to you as soon as we can.",
             "telephone": "Telephone",
+            "addressEN":"Rm. 813, 8F., No. 7-1, Dehui St., Zhongshan Dist., Taipei City",
+            "address":"Address",
             "email": "Email"
         }
